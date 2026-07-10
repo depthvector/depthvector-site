@@ -196,8 +196,8 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
   padding: 14px 0;
 }
 .header-logo {
-  width: 190px;
-  height: 26px;
+  width: 170px;
+  aspect-ratio: 1600 / 364; /* H3 horizontal logo */
   text-decoration: none;
 }
 .header-logo > img { object-fit: contain; }
@@ -557,8 +557,8 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
 }
 .download > .container { position: relative; z-index: 2; }
 .download-logo {
-  width: min(420px, 80vw);
-  height: 54px;
+  width: min(360px, 76vw);
+  aspect-ratio: 1600 / 364;
   margin: 0 auto 18px;
 }
 .download-logo > img { object-fit: contain; }
@@ -609,7 +609,7 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
   align-items: center;
   gap: 28px;
 }
-.footer-logo { width: 220px; height: 30px; }
+.footer-logo { width: 210px; aspect-ratio: 1600 / 364; }
 .footer-logo > img { object-fit: contain; }
 .footer-tagline {
   margin-top: 10px;
