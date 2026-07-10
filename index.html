@@ -114,18 +114,23 @@
           },
           {
             "@type": "Question",
+            "name": "Can AI really predict dive curves?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not on its own, and we don't ask it to. Depth Vector starts with physics: how a lure's bill, your line, and your speed interact in the water. We then use the latest AI models to refine those curves against depths we measured ourselves, and to extend them across hundreds of thousands of combinations no one could ever test by hand. Measurement keeps it grounded; AI fills the gaps." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why can't I just make bottom contact and go from there?",
+            "acceptedAnswer": { "@type": "Answer", "text": "You can, and it works. Ticking bottom is a proven way to know exactly where your lure is. It only answers one question though: where the bottom is. When fish are suspended at 22 feet over 40, bottom contact can't take you to them, and dragging rock piles gets expensive. Depth Vector gives you the same confidence anywhere in the water column." }
+          },
+          {
+            "@type": "Question",
+            "name": "People have trolled without an app since the beginning of time. Why now?",
+            "acceptedAnswer": { "@type": "Answer", "text": "They have, and plenty of fish hit the net that way. The app doesn't replace experience; it shortens the search. Instead of spending the first hour of a trip finding the zone, you start in it, and you can put a second and third rod on the same depth with confidence. Anglers happily spend hundreds on tackle for a chance at better odds. Knowing your depth costs about as much as two crankbaits a year." }
+          },
+          {
+            "@type": "Question",
             "name": "How much leadcore line do I let out for 30 feet?",
             "acceptedAnswer": { "@type": "Answer", "text": "The old rule of thumb is that each color of leadcore adds roughly five feet of depth, so 30 feet would be about six colors. Real depth shifts with your speed, lure, and leader, so the rule is only a starting point. Depth Vector calculates colors out for your actual setup instead of an average." }
-          },
-          {
-            "@type": "Question",
-            "name": "What's the best app for trolling depth?",
-            "acceptedAnswer": { "@type": "Answer", "text": "A good trolling depth app should be actively maintained, cover the ways you actually troll, and base its numbers on real testing rather than a reprinted chart. Depth Vector was built to be exactly that: advanced physics models refined with AI against measured depths on the water, covering everything from a single crankbait to a full spread." }
-          },
-          {
-            "@type": "Question",
-            "name": "How accurate are trolling depth charts?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Printed dive charts are averages taken years ago on one line type and one speed, so they drift from reality as your setup changes. No chart or app can be perfect, because current, water density, and line wear all move the number. Depth Vector gets as close as physics allows by modeling your actual lure, line, and speed, and checking predictions against measured depth." }
           },
           {
             "@type": "Question",
@@ -134,8 +139,13 @@
           },
           {
             "@type": "Question",
-            "name": "How does line diameter affect lure depth?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Thicker line creates more water resistance, which keeps a diving lure shallower on the same length of line. Dropping from a standard mono to a thin braid can add several feet of running depth with no other change. That is why Depth Vector's catalog carries real measured diameters for more than 1,000 lines." }
+            "name": "How accurate is Depth Vector?",
+            "acceptedAnswer": { "@type": "Answer", "text": "As close as controlled measurement and physics can get, and we're upfront that nobody, including us, can promise perfection. Our numbers come from testing on the water while controlling every variable we can, and modeling the rest. Conditions will always add some variation. Keep your setup consistent and the numbers repeat, and repeatable is what puts fish in the boat." }
+          },
+          {
+            "@type": "Question",
+            "name": "What's the best app for trolling depth?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A good trolling depth app should be actively maintained, cover the ways you actually troll, and stand on real testing. Depth Vector was built for exactly that: advanced physics models refined with the latest AI against measured depths on the water, covering everything from a single crankbait to a full spread. We'd rather prove it on your boat than claim it here." }
           }
         ]
       }
@@ -158,7 +168,7 @@
         <a href="#features">Features</a>
         <a href="#video">In Action</a>
         <a href="#roadmap">What's Live</a>
-        <a href="#straight-talk">Straight Talk</a>
+        <a href="#variables">Variables</a>
         <a href="#faq">FAQ</a>
       </nav>
       <a href="#download" class="btn btn-primary btn-small">Get the App</a>
@@ -221,7 +231,7 @@
             <p>We test relentlessly, rod by rod and line type by line type. Predictions are checked against measured depth before they ship.</p>
           </div>
         </div>
-        <p class="why-pitch reveal">No one can physically test every combination of lure, line, speed, and line out. There are hundreds of thousands of them, and conditions on the water never repeat exactly. So we built something smarter: we test relentlessly, and we let physics and AI intelligently model the rest. The result is the first modern trolling app, a maintained, full trip system for everyone from your first crankbait to a full spread. Pick your lure and line, set your speed, and get real line out numbers for the depth you want.</p>
+        <p class="why-pitch reveal">No one can physically test every combination of lure, line, speed, and line out. There are hundreds of thousands of them, and conditions on the water never repeat exactly. So we built something smarter: we test relentlessly, and we use physics and the latest AI models to intelligently cover the rest. The result is the first modern trolling app, a maintained, full trip system for everyone from your first crankbait to a full spread. Pick your lure and line, set your speed, and get real line out numbers for the depth you want.</p>
       </div>
     </section>
 
@@ -338,24 +348,70 @@
           <div class="roadmap-col panel">
             <h3><span class="dot dot-blue"></span>Coming next</h3>
             <ul class="list-coming">
-              <li>Divers (Dipsy class)</li>
-              <li>Speed offset for underwater currents</li>
-              <li>Depth tuning (see straight talk below)</li>
+              <li>Divers: Dipsy, Torpedo, and mini sizes, tested with Luhr-Jensen models first</li>
+              <li>Boat transducer depth input, so app numbers line up with your graph</li>
+              <li>Lure speed input for anglers running a speed probe</li>
+              <li>Custom depth offsets for every saved rod and lure setup</li>
+              <li>Live running depth in Active Trip from phone GPS speed</li>
+              <li>Whatever you wish for: Make a Wish requests steer this list</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ============ 6. STRAIGHT TALK ============ -->
-    <section class="straight-talk section" id="straight-talk">
+    <!-- ============ 6. TROLLING VARIABLES ============ -->
+    <section class="variables section" id="variables">
       <div class="section-bg asset" data-asset="assets/bg-talk.jpg" data-bg data-label=""></div>
-      <div class="container narrow">
-        <h2 class="section-title reveal">Straight talk: how running depth really works</h2>
-        <div class="prose reveal">
-          <p>Real running depth comes down to your lure, your line diameter, your speed, and how much line you've got out. But it also depends on things no app can fully see: current, water density, line wear, even how a specific lure was tuned at the factory.</p>
-          <p>Because of that, <strong>no app can predict depth to 100% accuracy. Anyone claiming it is selling something.</strong> Depth Vector's physics engine is built and verified against controlled testing on the water to be as close as physics allows. That's the ceiling physics sets, and we work right up against it.</p>
-          <p class="future-note"><span class="pill pill-blue">Coming in a future release</span> Tuning: when you know your true depth from your electronics or bottom contact, you can tell the app, and it will adjust predictions for your boat and your gear. This is not in the app today. When it ships, your numbers get personal.</p>
+      <div class="container">
+        <h2 class="section-title reveal">Trolling variables: what actually moves your depth</h2>
+        <div class="prose narrow-prose reveal">
+          <p>Running depth is a physics problem with a lot of inputs. Our approach is to measure on the water while controlling as many of these variables as we can, then use physics and the latest AI models to cover the combinations no one could ever test by hand. Our measurements aren't perfect either. There will always be slight variation, and our numbers will keep improving as we test. What we can give you today is the most accurate representation we know how to build.</p>
+        </div>
+        <div class="var-grid reveal">
+          <div class="var-card panel">
+            <h3>Speed</h3>
+            <p>The biggest lever you control. Speed changes the balance between a lure's dive force and the drag on your line, so the same rig runs at different depths at 1.8 and 2.5 mph.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Line diameter</h3>
+            <p>Thicker line drags more water and keeps a diving lure shallower on the same length of line. Moving from standard mono to thin braid can add several feet with no other change.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Line counter accuracy</h3>
+            <p>Counters measure spool revolutions, not feet. Two reels with the same counter reading can have different amounts of line in the water if their spools are filled differently.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Spool fill</h3>
+            <p>A full spool pays out more line per revolution than a half spool. Fill your reels the same way every time and your counter numbers become repeatable.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Mono stretch</h3>
+            <p>Mono stretches under the pull of a working lure, so the line between you and the lure is longer and shaped differently than the counter suggests. Braid barely stretches at all.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Transducer depth</h3>
+            <p>Your graph measures from the transducer, which sits below the waterline. Fish marked at 20 feet are deeper than 20 feet from the surface, where your lure numbers start.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Underwater current</h3>
+            <p>GPS speed is boat speed over ground. Water moving beneath you means your lure's speed through the water is different, so the same pass can run deeper one direction than the other.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Water density</h3>
+            <p>Yes, it's real. Cold water is denser and noticeably thicker than warm water, which changes the drag on your line and lure. A spring program and an August program aren't identical.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Lure tuning</h3>
+            <p>Two identical crankbaits off the shelf can run differently. A lure that isn't tracking true wanders shallow. Tune it to run straight and it runs to its number.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Rod position</h3>
+            <p>A rod tip held high pulls line up and out of the water; a tip near the surface puts more of it to work. Consistent rod placement keeps your numbers consistent.</p>
+          </div>
+        </div>
+        <div class="prose narrow-prose reveal">
+          <p class="var-outro">Here's the good news: you don't have to be perfect, you have to be repeatable. Control the variables you can, know the ones you can't, and set your rods up the same way every time. Two rods rigged identically should run identically. That kind of clarity is what puts lures in the zone and keeps them there.</p>
         </div>
       </div>
     </section>
@@ -414,24 +470,32 @@
             <p>It depends on the lure's bill and body, your line diameter, your trolling speed, and how much line you have out. The same crankbait can run several feet apart on different setups. Depth Vector models your exact combination and gives you a line out number for the depth you want.</p>
           </div>
           <div class="faq-item panel">
+            <h3>Can AI really predict dive curves?</h3>
+            <p>Not on its own, and we don't ask it to. Depth Vector starts with physics: how a lure's bill, your line, and your speed interact in the water. We then use the latest AI models to refine those curves against depths we measured ourselves, and to extend them across hundreds of thousands of combinations no one could ever test by hand. Measurement keeps it grounded; AI fills the gaps.</p>
+          </div>
+          <div class="faq-item panel">
+            <h3>Why can't I just make bottom contact and go from there?</h3>
+            <p>You can, and it works. Ticking bottom is a proven way to know exactly where your lure is. It only answers one question though: where the bottom is. When fish are suspended at 22 feet over 40, bottom contact can't take you to them, and dragging rock piles gets expensive. Depth Vector gives you the same confidence anywhere in the water column.</p>
+          </div>
+          <div class="faq-item panel">
+            <h3>People have trolled without an app since the beginning of time. Why now?</h3>
+            <p>They have, and plenty of fish hit the net that way. The app doesn't replace experience; it shortens the search. Instead of spending the first hour of a trip finding the zone, you start in it, and you can put a second and third rod on the same depth with confidence. Anglers happily spend hundreds on tackle for a chance at better odds. Knowing your depth costs about as much as two crankbaits a year.</p>
+          </div>
+          <div class="faq-item panel">
             <h3>How much leadcore line do I let out for 30 feet?</h3>
             <p>The old rule of thumb is that each color of leadcore adds roughly five feet of depth, so 30 feet would be about six colors. Real depth shifts with your speed, lure, and leader, so the rule is only a starting point. Depth Vector calculates colors out for your actual setup instead of an average.</p>
-          </div>
-          <div class="faq-item panel">
-            <h3>What's the best app for trolling depth?</h3>
-            <p>A good trolling depth app should be actively maintained, cover the ways you actually troll, and base its numbers on real testing rather than a reprinted chart. Depth Vector was built to be exactly that: advanced physics models refined with AI against measured depths on the water, covering everything from a single crankbait to a full spread.</p>
-          </div>
-          <div class="faq-item panel">
-            <h3>How accurate are trolling depth charts?</h3>
-            <p>Printed dive charts are averages taken years ago on one line type and one speed, so they drift from reality as your setup changes. No chart or app can be perfect, because current, water density, and line wear all move the number. Depth Vector gets as close as physics allows by modeling your actual lure, line, and speed, and checking predictions against measured depth.</p>
           </div>
           <div class="faq-item panel">
             <h3>Does trolling speed change lure depth?</h3>
             <p>Yes, and by more than most anglers expect. Speed changes the balance between a lure's dive force and the drag on your line, so the same rig runs at different depths at 1.8 and 2.5 mph. Weighted lines like leadcore ride noticeably higher as speed climbs. Depth Vector takes speed as an input, so your number updates when your speed does.</p>
           </div>
           <div class="faq-item panel">
-            <h3>How does line diameter affect lure depth?</h3>
-            <p>Thicker line creates more water resistance, which keeps a diving lure shallower on the same length of line. Dropping from a standard mono to a thin braid can add several feet of running depth with no other change. That is why Depth Vector's catalog carries real measured diameters for more than 1,000 lines.</p>
+            <h3>How accurate is Depth Vector?</h3>
+            <p>As close as controlled measurement and physics can get, and we're upfront that nobody, including us, can promise perfection. Our numbers come from testing on the water while controlling every variable we can, and modeling the rest. Conditions will always add some variation. Keep your setup consistent and the numbers repeat, and repeatable is what puts fish in the boat.</p>
+          </div>
+          <div class="faq-item panel">
+            <h3>What's the best app for trolling depth?</h3>
+            <p>A good trolling depth app should be actively maintained, cover the ways you actually troll, and stand on real testing. Depth Vector was built for exactly that: advanced physics models refined with the latest AI against measured depths on the water, covering everything from a single crankbait to a full spread. We'd rather prove it on your boat than claim it here.</p>
           </div>
         </div>
       </div>
@@ -468,6 +532,7 @@
         <p class="notify-thanks" id="notify-thanks" hidden>You're on the list. We'll email you at launch.</p>
 
         <p class="contact-line reveal">Questions? <a href="mailto:hello@depth-vector.com"><strong>hello@depth-vector.com</strong></a></p>
+        <p class="cta-thanks reveal">Thanks for stopping by. Whether you fish with Depth Vector or not, we appreciate your time, and we hope your next trip is your best one.</p>
       </div>
     </section>
   </main>

@@ -15,7 +15,7 @@
 
 - First release covers crankbait dive predictions for all major walleye cranks, leadcore, copper, downriggers, snap weights with rigging suggestions, trip logging and catch tracking.
 - Catalog of 150+ walleye lures and 1,000+ fishing lines with real measured diameters.
-- Coming after launch: divers (Dipsy class), speed offset for underwater currents, and depth tuning against your own measured depths.
+- Coming after launch: divers (Dipsy, Torpedo, and mini sizes, tested with Luhr-Jensen models first), boat transducer depth input, lure speed input for speed probes, custom depth offsets per saved rod and lure setup, and live running depth in Active Trip from phone GPS speed. User requests through the app's Make a Wish feature steer the roadmap.
 - Depth predictions come from physics models refined with AI against controlled depth testing on the water, not from a static lookup table.
 - No app can predict running depth to 100% accuracy; current, water density, and line wear all move the number. Depth Vector aims to be as close as physics allows.
 - Privacy: GPS is used transiently for trolling speed only. Precise locations are never stored or transmitted.
@@ -29,6 +29,6 @@ Depth Vector, a trolling depth calculator app for walleye anglers. https://depth
 - Website: https://depth-vector.com/
 - FAQ: https://depth-vector.com/#faq
 - What is live today: https://depth-vector.com/#roadmap
-- How running depth really works: https://depth-vector.com/#straight-talk
+- Trolling variables that move running depth: https://depth-vector.com/#variables
 - Contact: hello@depth-vector.com
 - Privacy: https://depth-vector.com/privacy.html
