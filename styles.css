@@ -49,6 +49,7 @@ img { max-width: 100%; display: block; }
 .center { text-align: center; }
 
 .section { padding: clamp(64px, 9vw, 120px) 0; position: relative; }
+.section > .container { position: relative; z-index: 2; }
 
 /* subtle navy radial glows behind alternating sections */
 .why, .roadmap, .download {
@@ -153,6 +154,30 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
 .asset.asset-loaded { border: none; background: none; }
 .asset > img { width: 100%; height: 100%; object-fit: cover; }
 .asset[data-bg].asset-loaded { background-size: cover; background-position: center; }
+
+/* shared darkened photo layer behind sections; fades into the page
+   background at the top and bottom edge so sections melt together.
+   Must come AFTER the .asset rules: both selectors are single-class,
+   so source order decides the position/overflow override. */
+.section-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.26;
+  border: none !important;
+  border-radius: 0 !important;
+}
+.section-bg:not(.asset-loaded) { background: none; }
+.section-bg:not(.asset-loaded)::after { content: none; }
+.section-bg.asset-loaded::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(12,15,20,0.35) 22%, rgba(12,15,20,0.35) 78%, var(--bg) 100%);
+}
+/* water-texture crops are small files stretched large — keep them dimmer */
+.section-bg-texture { opacity: 0.18; }
 
 /* ---------- header ---------- */
 .site-header {
@@ -433,6 +458,8 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  text-align: center;
+  padding: 0 24px;
 }
 .video-caption {
   text-align: center;

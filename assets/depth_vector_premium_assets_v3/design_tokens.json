@@ -1,0 +1,18 @@
+{
+  "brand": "Depth Vector",
+  "asset_version": "premium_v3",
+  "colors": {
+    "electricBlue": "#00A6FF",
+    "deepBlue": "#0066FF",
+    "navy": "#081220",
+    "blackNavy": "#0A0F16",
+    "metalSilver": "#C0C6CE",
+    "white": "#FFFFFF"
+  },
+  "recommended_usage": {
+    "ios_android_app_icon": "png/app_icon_A6_dark_1024.png or png/app_icon_A6_dark_4096.png as master",
+    "in_app_header": "transparent_png/horizontal_logo_H3_transparent_4800w.png on dark app UI",
+    "splash_about_marketing": "png/horizontal_logo_H3_dark_4800w.png",
+    "small_badges": "transparent_png/dv_mark_transparent_1024w.png; svg/bullseye.svg; svg/depth_scale_10_60.svg"
+  }
+}
