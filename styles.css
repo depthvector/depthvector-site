@@ -636,6 +636,16 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
 .who-body h3 { font-size: 1.15rem; margin-bottom: 10px; }
 .who-body p { color: var(--text-dim); font-size: 0.95rem; }
 
+/* ---------- FAQ ---------- */
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.faq-item { padding: 26px 28px; }
+.faq-item h3 { font-size: 1.1rem; margin-bottom: 10px; }
+.faq-item p { color: var(--text-dim); font-size: 0.97rem; }
+
 /* ---------- download CTA ---------- */
 .download { overflow: hidden; }
 .download-bg {
