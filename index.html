@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  DEPTH VECTOR — MARKETING SITE · LAUNCH CHECKLIST
+  ============================================================
+  ASSETS (drop files at these paths; placeholders auto-swap):
+    assets/logo-wordmark.png        — horizontal wordmark (header + footer)  [PRESENT]
+    assets/favicon.png              — DV monogram favicon                    [PRESENT]
+    assets/app-icon.png             — square app icon                        [placeholder]
+    assets/screenshot-home.png      — Home screen (hero phone)              [placeholder]
+    assets/screenshot-quickdepth.png — Quick Depth screen                    [placeholder]
+    assets/screenshot-activetrip.png — Active Trip dashboard                 [placeholder]
+    assets/screenshot-rodlocker.png — Rod Locker screen                      [placeholder]
+    assets/screenshot-spreads.png   — Spreads screen                         [placeholder]
+    assets/photo-hero.jpg           — hero background fishing photo          [placeholder]
+    assets/photo-who-1.jpg          — "weekend troller" card photo           [placeholder]
+    assets/photo-who-2.jpg          — "serious walleye hand" card photo      [placeholder]
+    assets/photo-who-3.jpg          — "newcomer" card photo                  [placeholder]
+    assets/qr-appstore.png          — App Store QR (generate AFTER listing exists)
+    assets/qr-googleplay.png        — Google Play QR (generate AFTER listing exists)
+
+  TODOs BEFORE/AT LAUNCH:
+    [ ] VIDEO: replace VIDEO_ID_HERE in script.js with the real YouTube video ID
+    [ ] STORE LINKS: when listings go live, add real hrefs to the store badges
+        (search for "store-badge" below) and remove the "Coming Soon" state
+    [ ] FORM: wire the "Get notified" form to a real endpoint
+        (see the comment in script.js — Cloudflare Worker or form service)
+    [ ] PRIVACY/TERMS: replace privacy.html and terms.html placeholder copy
+        with the real documents (required for App Store / Play anyway)
+    [ ] OG IMAGE: og:image points at assets/photo-hero.jpg — confirm it exists
+    [ ] YOUTUBE: footer YouTube link points at the channel — set real channel URL
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Depth Vector — Know Exactly How Deep You're Running</title>
+  <meta name="description" content="Depth Vector is a physics-based trolling depth calculator for walleye anglers. Enter your lure, line, and speed — get real line-out numbers for the depth you want. Built by trollers, for trollers.">
+  <link rel="canonical" href="https://depth-vector.com/">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://depth-vector.com/">
+  <meta property="og:title" content="Depth Vector — Know Exactly How Deep You're Running">
+  <meta property="og:description" content="Physics-based trolling depth predictions for every rod in your spread. Built by trollers, for trollers.">
+  <meta property="og:image" content="https://depth-vector.com/assets/photo-hero.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/favicon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="header-logo asset" data-asset="assets/logo-wordmark.png" data-alt="Depth Vector" data-label="Depth Vector"></a>
+      <a href="#download" class="btn btn-primary btn-small">Get the App</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ 1. HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg asset" data-asset="assets/photo-hero.jpg" data-bg data-label=""></div>
+      <div class="container hero-inner">
+        <div class="hero-copy reveal">
+          <span class="pill">The Best New Trolling App</span>
+          <h1>Know exactly how deep you're running.</h1>
+          <p class="subhead">Physics-based depth predictions for every rod in your spread — built by trollers, for trollers.</p>
+
+          <div class="store-row">
+            <!-- TODO: when store listings go live, wrap badges in real <a href> and remove .coming-soon -->
+            <div class="store-badge coming-soon" aria-label="App Store — coming soon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702z"/></svg>
+              <span><small>Coming Soon to the</small><strong>App Store</strong></span>
+            </div>
+            <div class="store-badge coming-soon" aria-label="Google Play — coming soon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5V3.5c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35m13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27m3.35-4.31c.34.27.59.69.59 1.19s-.25.92-.59 1.19l-2.27 1.31-2.5-2.5 2.5-2.5 2.27 1.31M6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+              <span><small>Coming Soon to</small><strong>Google Play</strong></span>
+            </div>
+          </div>
+          <div class="qr-row">
+            <div class="qr asset" data-asset="assets/qr-appstore.png" data-alt="App Store QR code" data-label="QR"></div>
+            <div class="qr asset" data-asset="assets/qr-googleplay.png" data-alt="Google Play QR code" data-label="QR"></div>
+          </div>
+        </div>
+
+        <div class="hero-phone reveal">
+          <div class="phone">
+            <div class="phone-screen asset" data-asset="assets/screenshot-home.png" data-alt="Depth Vector home screen" data-label="Home screen"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. WHY DEPTH VECTOR ============ -->
+    <section class="why section">
+      <div class="container">
+        <div class="claim-grid reveal">
+          <div class="claim-card">
+            <span class="claim-kicker accent-blue">The Engine</span>
+            <h3>Physics-based — not a lookup table</h3>
+            <p>Real drag-and-dive math for your exact lure, line, and speed. Not somebody's chart from 1994.</p>
+          </div>
+          <div class="claim-card">
+            <span class="claim-kicker accent-cyan">The Proof</span>
+            <h3>Verified on the water, rod by rod</h3>
+            <p>Predictions are checked against real depth measurements before they ever ship to your phone.</p>
+          </div>
+          <div class="claim-card">
+            <span class="claim-kicker accent-magenta">The Promise</span>
+            <h3>We never know where you fish</h3>
+            <p>GPS is used for speed, not spots. Your locations are never stored, never sent, never seen.</p>
+          </div>
+        </div>
+        <p class="why-pitch reveal">Most trolling depth tools are either decade-old apps that no longer work or single-purpose calculators that stop at one number. Depth Vector is a modern, maintained, full trip system: pick your lure and line, set your speed, and get real line-out numbers for the depth you want — for every rod you're running.</p>
+      </div>
+    </section>
+
+    <!-- ============ 3. KEY FEATURES ============ -->
+    <section class="features section" id="features">
+      <div class="container">
+        <h2 class="section-title reveal">Built for the way you actually troll</h2>
+
+        <div class="feature-row reveal">
+          <div class="feature-copy">
+            <span class="feature-kicker">Quick Depth</span>
+            <h3>Target depth in. Line out. Done.</h3>
+            <p>The keystone of the app: enter the depth you want and the speed you're pulling, and get your line-out number instantly. Works for every lure and line combo in the catalog — no charts, no guessing, no dog-eared booklet in the glove box.</p>
+          </div>
+          <div class="feature-shot">
+            <div class="phone">
+              <div class="phone-screen asset" data-asset="assets/screenshot-quickdepth.png" data-alt="Quick Depth screen" data-label="Quick Depth"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-row flip reveal">
+          <div class="feature-copy">
+            <span class="feature-kicker">Active Trip</span>
+            <h3>Run your whole spread, live.</h3>
+            <p>Every rod's target depth and line-out on one dashboard, with live GPS speed off your phone. Bump your trolling speed and change every rod at once — the whole spread stays dialed.</p>
+          </div>
+          <div class="feature-shot">
+            <div class="phone">
+              <div class="phone-screen asset" data-asset="assets/screenshot-activetrip.png" data-alt="Active Trip dashboard" data-label="Active Trip"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-row reveal">
+          <div class="feature-copy">
+            <span class="feature-kicker">Rod Locker</span>
+            <h3>Your real rigs, saved once.</h3>
+            <p>Save each setup the way it actually sits in your boat — rod, reel, line — and reuse it every trip. Backed by a catalog of 150+ walleye lures and 1,000+ lines with real diameters.</p>
+          </div>
+          <div class="feature-shot">
+            <div class="phone">
+              <div class="phone-screen asset" data-asset="assets/screenshot-rodlocker.png" data-alt="Rod Locker screen" data-label="Rod Locker"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-row flip reveal">
+          <div class="feature-copy">
+            <span class="feature-kicker">Spreads</span>
+            <h3>Save what works. Run it again.</h3>
+            <p>Build multi-rod setups, save the ones that catch fish, and redeploy a full spread in seconds — exactly the way it worked last time.</p>
+          </div>
+          <div class="feature-shot">
+            <div class="phone">
+              <div class="phone-screen asset" data-asset="assets/screenshot-spreads.png" data-alt="Spreads screen" data-label="Spreads"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="conditions-card reveal">
+          <div class="conditions-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6.5 20a4.5 4.5 0 0 1-.36-8.99 6.5 6.5 0 0 1 12.72 1.05A4 4 0 0 1 18 20H6.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h3>Live conditions, front and center</h3>
+            <p>Weather and barometric pressure on the home screen, centered on right now — so you know what the bite is working with before lines go in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. SEE IT IN ACTION ============ -->
+    <section class="video section" id="video">
+      <div class="container">
+        <h2 class="section-title reveal">See it in action</h2>
+        <!-- TODO: set VIDEO_ID in script.js (const VIDEO_ID). Placeholder renders until then. -->
+        <div class="video-frame reveal" id="video-frame">
+          <div class="video-placeholder">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg>
+            <p>App walkthrough video coming soon</p>
+          </div>
+        </div>
+        <p class="video-caption reveal">This doubles as the training video — a full walkthrough from launch to lines in the water.</p>
+      </div>
+    </section>
+
+    <!-- ============ 5. LIVE TODAY VS COMING NEXT ============ -->
+    <section class="roadmap section">
+      <div class="container">
+        <h2 class="section-title reveal">We ship what we've verified</h2>
+        <div class="roadmap-grid reveal">
+          <div class="roadmap-col panel">
+            <h3><span class="dot dot-cyan"></span>Fully live &amp; tested</h3>
+            <ul class="list-live">
+              <li>Crankbait dive predictions — all major walleye cranks</li>
+              <li>Leadcore</li>
+              <li>Full line database — mono, braid, leadcore, real diameters</li>
+              <li>Live GPS speed</li>
+              <li>Quick Depth</li>
+              <li>Rod Locker</li>
+              <li>Spreads</li>
+              <li>Offline mode</li>
+            </ul>
+          </div>
+          <div class="roadmap-col panel">
+            <h3><span class="dot dot-blue"></span>Coming next</h3>
+            <ul class="list-coming">
+              <li>Divers (Dipsy-class)</li>
+              <li>Snap weights &amp; rigging suggestions — can't reach 35 ft on mono? Here's what will.</li>
+              <li>Downriggers</li>
+              <li>Copper</li>
+              <li>Trip logging &amp; catch tracking</li>
+              <li>Speed offset for underwater currents</li>
+              <li>Depth tuning — see straight talk below</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. STRAIGHT TALK ============ -->
+    <section class="straight-talk section">
+      <div class="container narrow">
+        <h2 class="section-title reveal">Straight talk: how running depth really works</h2>
+        <div class="prose reveal">
+          <p>Real running depth comes down to your lure, your line diameter, your speed, and how much line you've got out. But it also depends on things no app can fully see: current, water density, line wear, even how a specific lure was tuned at the factory.</p>
+          <p>Because of that, <strong>no app can predict depth to 100% accuracy — anyone claiming it is selling something.</strong> Depth Vector's physics engine is built and verified against controlled on-water testing to be as close as physics allows. That's the honest ceiling, and we work right up against it.</p>
+          <p class="future-note"><span class="pill pill-blue">Coming in a future release</span> Tuning: when you know your true depth — from your electronics or bottom contact — you'll be able to tell the app, and it will adjust predictions for your boat and your gear. This is not in the app today; when it ships, your numbers get personal.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. WHO IT'S FOR ============ -->
+    <section class="who section">
+      <div class="container">
+        <h2 class="section-title reveal">Who it's for</h2>
+        <div class="who-grid reveal">
+          <div class="who-card panel">
+            <div class="who-photo asset" data-asset="assets/photo-who-1.jpg" data-bg data-label="Photo"></div>
+            <div class="who-body">
+              <h3>The weekend troller</h3>
+              <p>Wants fish, not math. Quick Depth gets lines to the right depth in seconds, so the cooler fills up while everyone else is still guessing.</p>
+            </div>
+          </div>
+          <div class="who-card panel">
+            <div class="who-photo asset" data-asset="assets/photo-who-2.jpg" data-bg data-label="Photo"></div>
+            <div class="who-body">
+              <h3>The serious walleye hand</h3>
+              <p>Runs multi-rod spreads and wants every rod dialed and repeatable. Spreads and the Active Trip dashboard keep the whole program tight.</p>
+            </div>
+          </div>
+          <div class="who-card panel">
+            <div class="who-photo asset" data-asset="assets/photo-who-3.jpg" data-bg data-label="Photo"></div>
+            <div class="who-body">
+              <h3>The newcomer</h3>
+              <p>Doesn't yet know a #5 crank on mono can't reach 35 feet. The app teaches while it works — you learn the water by fishing it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. FINAL DOWNLOAD CTA ============ -->
+    <section class="download section" id="download">
+      <div class="container narrow center">
+        <div class="download-logo asset reveal" data-asset="assets/logo-wordmark.png" data-alt="Depth Vector" data-label="Depth Vector"></div>
+        <p class="download-tagline reveal">Know exactly how deep you're running.</p>
+
+        <div class="store-row center reveal">
+          <div class="store-badge coming-soon" aria-label="App Store — coming soon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702z"/></svg>
+            <span><small>Coming Soon to the</small><strong>App Store</strong></span>
+          </div>
+          <div class="store-badge coming-soon" aria-label="Google Play — coming soon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5V3.5c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35m13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27m3.35-4.31c.34.27.59.69.59 1.19s-.25.92-.59 1.19l-2.27 1.31-2.5-2.5 2.5-2.5 2.27 1.31M6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+            <span><small>Coming Soon to</small><strong>Google Play</strong></span>
+          </div>
+        </div>
+        <div class="qr-row center reveal">
+          <div class="qr asset" data-asset="assets/qr-appstore.png" data-alt="App Store QR code" data-label="QR"></div>
+          <div class="qr asset" data-asset="assets/qr-googleplay.png" data-alt="Google Play QR code" data-label="QR"></div>
+        </div>
+
+        <form class="notify-form reveal" id="notify-form" novalidate>
+          <label class="visually-hidden" for="notify-email">Email address</label>
+          <input type="email" id="notify-email" name="email" placeholder="you@example.com" required autocomplete="email">
+          <button type="submit" class="btn btn-primary">Get notified at launch</button>
+        </form>
+        <p class="notify-thanks" id="notify-thanks" hidden>You're on the list. We'll email you the day it drops. 🎣</p>
+
+        <p class="contact-line reveal">Questions? <a href="mailto:hello@depth-vector.com"><strong>hello@depth-vector.com</strong></a></p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 9. FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo asset" data-asset="assets/logo-wordmark.png" data-alt="Depth Vector" data-label="Depth Vector"></div>
+        <p class="footer-tagline">We never know where you fish.</p>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="mailto:support@depth-vector.com">Support</a>
+        <a href="mailto:hello@depth-vector.com">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <!-- TODO: set the real YouTube channel URL -->
+        <a href="https://www.youtube.com/" rel="noopener" target="_blank">YouTube</a>
+      </nav>
+    </div>
+    <div class="container footer-copyright">
+      <p>Depth Vector © 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
