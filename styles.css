@@ -13,6 +13,8 @@
   --cta-top: #1A6BEC;
   --cta-bottom: #0A347F;
   --cyan: #2FE3BC;
+  --electric: #00A6FF; /* brand token electricBlue — logo-adjacent glows */
+  --deep: #0066FF;     /* brand token deepBlue */
   --yellow: #FFD42E;
   --magenta: #FF5C8A;
   --fish-green: #8edc3b; /* reserved: fish/catch references only */
@@ -196,9 +198,17 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
   padding: 14px 0;
 }
 .header-logo {
-  width: 170px;
-  aspect-ratio: 1600 / 364; /* H3 horizontal logo */
+  width: 200px;
+  aspect-ratio: 1600 / 426; /* H3 dark badge */
   text-decoration: none;
+}
+/* the H3 logo is an opaque rounded dark badge — give it a faint
+   electric-blue lift so it sits on the page like a physical plate */
+.header-logo > img,
+.footer-logo > img,
+.download-logo > img {
+  border-radius: 10px;
+  box-shadow: 0 2px 18px rgba(0, 166, 255, 0.14);
 }
 .header-logo > img { object-fit: contain; }
 
@@ -234,8 +244,36 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
   transform: translateX(-50%);
   width: 130%;
   height: 100%;
-  background: radial-gradient(ellipse 55% 50% at 50% 30%, rgba(26, 107, 236, 0.16), transparent 70%);
+  background: radial-gradient(ellipse 55% 50% at 50% 30%, rgba(0, 166, 255, 0.13), transparent 70%);
   pointer-events: none;
+}
+
+/* brand contour texture — reads as texture, not wallpaper */
+.contour-layer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background-image: url("assets/contour-texture.jpg");
+  background-size: 520px auto;
+  background-repeat: repeat;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* depth-scale motif beside the hero (desktop only) */
+.depth-scale-accent {
+  position: absolute;
+  right: 1.8%;
+  top: 50%;
+  transform: translateY(-50%);
+  height: min(45%, 330px);
+  width: auto;
+  opacity: 0.32;
+  z-index: 1;
+  pointer-events: none;
+}
+@media (max-width: 1200px) {
+  .depth-scale-accent { display: none; }
 }
 .hero-inner {
   position: relative;
@@ -296,6 +334,17 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
   border-radius: 10px;
 }
 
+/* app icon shown beside the store badges */
+.app-icon-badge {
+  width: 64px;
+  height: 64px;
+  border-radius: 15px;
+  align-self: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 16px rgba(0, 166, 255, 0.18);
+}
+.app-icon-badge > img { border-radius: 15px; }
+
 /* phone frame (CSS-drawn, 9:19.5 screen) */
 .phone {
   width: min(300px, 78vw);
@@ -306,7 +355,7 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
   border: 1px solid rgba(160, 190, 230, 0.18);
   box-shadow:
     0 24px 60px rgba(0, 0, 0, 0.55),
-    0 0 80px rgba(26, 107, 236, 0.12),
+    0 0 80px rgba(0, 166, 255, 0.1),
     inset 0 1px 0 rgba(255, 255, 255, 0.08);
   position: relative;
 }
@@ -364,6 +413,15 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
   text-align: center;
   color: var(--text-dim);
   font-size: 1.1rem;
+}
+.why-tagline {
+  margin-top: 26px;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-faint);
 }
 
 /* ---------- features ---------- */
@@ -493,11 +551,13 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
   font-size: 0.98rem;
 }
 .list-live li::before {
-  content: "✓";
+  content: "";
   position: absolute;
-  left: 4px;
-  color: var(--cyan);
-  font-weight: 800;
+  left: 2px;
+  top: 12px;
+  width: 16px;
+  height: 16px;
+  background: url("assets/bullseye.svg") center / contain no-repeat;
 }
 .list-coming li::before {
   content: "→";
@@ -517,6 +577,36 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
   padding: 24px 26px;
 }
 .future-note .pill-blue { display: inline-block; margin-bottom: 10px; }
+
+/* ---------- built with you ---------- */
+.built-with-you .section-title { margin-bottom: clamp(28px, 4vw, 44px); }
+.wish-card {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  text-align: left;
+  background: linear-gradient(180deg, var(--panel-top), var(--panel-bottom));
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 32px;
+}
+.wish-icon {
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  color: var(--cyan);
+  background: rgba(47, 227, 188, 0.09);
+  border: 1px solid rgba(47, 227, 188, 0.25);
+}
+.wish-icon svg { width: 30px; height: 30px; }
+.wish-card p { color: var(--text-dim); }
+.wish-card strong { color: var(--text); }
+@media (max-width: 600px) {
+  .wish-card { flex-direction: column; align-items: center; text-align: center; }
+}
 
 /* ---------- who it's for ---------- */
 .who-grid {
@@ -558,7 +648,7 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
 .download > .container { position: relative; z-index: 2; }
 .download-logo {
   width: min(360px, 76vw);
-  aspect-ratio: 1600 / 364;
+  aspect-ratio: 1600 / 426;
   margin: 0 auto 18px;
 }
 .download-logo > img { object-fit: contain; }
@@ -609,7 +699,7 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
   align-items: center;
   gap: 28px;
 }
-.footer-logo { width: 210px; aspect-ratio: 1600 / 364; }
+.footer-logo { width: 210px; aspect-ratio: 1600 / 426; }
 .footer-logo > img { object-fit: contain; }
 .footer-tagline {
   margin-top: 10px;

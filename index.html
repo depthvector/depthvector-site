@@ -4,10 +4,14 @@
   DEPTH VECTOR — MARKETING SITE · LAUNCH CHECKLIST
   ============================================================
   ASSETS (drop files at these paths; placeholders auto-swap):
-    assets/logo-wordmark.png        — H3 horizontal logo (header + footer)   [PRESENT]
-    assets/favicon.png              — A6 app icon 256px                      [PRESENT]
-    assets/app-icon.png             — A6 app icon 1024px (apple-touch-icon)  [PRESENT]
-    (brand source pack: assets/depth_vector_premium_assets_v3/ — see its README)
+    assets/logo-wordmark.png        — H3 dark badge logo, 640w (header/footer/CTA)      [PRESENT]
+    assets/favicon.png              — A6 app icon 128px (favicon + on-page icon)        [PRESENT]
+    assets/app-icon.png             — A6 app icon 512px (OG image + apple-touch-icon)   [PRESENT]
+    assets/contour-texture.jpg      — contour texture (JPEG for weight; hero/roadmap)   [PRESENT]
+    assets/depth_scale_10_60.svg    — depth-scale vertical hero accent                  [PRESENT]
+    assets/bullseye.svg             — roadmap "live" bullet marker                      [PRESENT]
+    (brand source pack: assets/depth_vector_premium_assets_v3/ — dark versions only;
+     transparent_png/ exports have edge artifacts, do not use)
     assets/screenshot-home.png      — Home screen (hero phone)              [placeholder]
     assets/screenshot-quickdepth.png — Quick Depth screen                    [placeholder]
     assets/screenshot-activetrip.png — Active Trip dashboard                 [placeholder]
@@ -44,16 +48,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Depth Vector — Know Exactly How Deep You're Running</title>
-  <meta name="description" content="Depth Vector is a physics-based trolling depth calculator for walleye anglers. Enter your lure, line, and speed — get real line-out numbers for the depth you want. Built by trollers, for trollers.">
+  <title>Depth Vector — Know How Deep You're Running</title>
+  <meta name="description" content="Depth Vector is the first modern trolling app: advanced physics models, refined with AI against real on-the-water depth testing. Real line-out numbers for every rod in your spread — from your first crankbait to a full spread.">
   <link rel="canonical" href="https://depth-vector.com/">
 
   <!-- OpenGraph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://depth-vector.com/">
-  <meta property="og:title" content="Depth Vector — Know Exactly How Deep You're Running">
-  <meta property="og:description" content="Physics-based trolling depth predictions for every rod in your spread. Built by trollers, for trollers.">
-  <meta property="og:image" content="https://depth-vector.com/assets/photo-hero.jpg">
+  <meta property="og:title" content="Depth Vector — Know How Deep You're Running">
+  <meta property="og:description" content="Advanced physics models, refined with AI against real on-the-water depth testing. Real depth numbers for the way you actually troll.">
+  <!-- TODO: replace with a proper 1200x630 OG banner when one exists -->
+  <meta property="og:image" content="https://depth-vector.com/assets/app-icon.png">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" type="image/png" href="assets/favicon.png">
@@ -79,13 +84,16 @@
     <!-- ============ 1. HERO ============ -->
     <section class="hero">
       <div class="hero-bg asset" data-asset="assets/photo-hero.jpg" data-bg data-label=""></div>
+      <div class="contour-layer" aria-hidden="true"></div>
+      <img class="depth-scale-accent" src="assets/depth_scale_10_60.svg" alt="" aria-hidden="true">
       <div class="container hero-inner">
         <div class="hero-copy reveal">
-          <span class="pill">The Best New Trolling App</span>
-          <h1>Know exactly how deep you're running.</h1>
-          <p class="subhead">Physics-based depth predictions for every rod in your spread — built by trollers, for trollers.</p>
+          <span class="pill">The First Modern Trolling App</span>
+          <h1>Know how deep you're running. Every rod. Every time.</h1>
+          <p class="subhead">Advanced physics models, refined with AI against real on-the-water depth testing — real depth numbers for the way you actually troll, from your first crankbait to a full spread.</p>
 
           <div class="store-row">
+            <div class="app-icon-badge asset" data-asset="assets/favicon.png" data-alt="Depth Vector app icon" data-label=""></div>
             <!-- TODO: when store listings go live, wrap badges in real <a href> and remove .coming-soon -->
             <div class="store-badge coming-soon" aria-label="App Store — coming soon">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702z"/></svg>
@@ -117,13 +125,13 @@
         <div class="claim-grid reveal">
           <div class="claim-card">
             <span class="claim-kicker accent-blue">The Engine</span>
-            <h3>Physics-based — not a lookup table</h3>
-            <p>Real drag-and-dive math for your exact lure, line, and speed. Not somebody's chart from 1994.</p>
+            <h3>Advanced physics + AI modeling — not a lookup table</h3>
+            <p>Real dive physics for your exact lure, line, and speed — refined with AI against measured depths from our own testing.</p>
           </div>
           <div class="claim-card">
             <span class="claim-kicker accent-cyan">The Proof</span>
-            <h3>Verified on the water, rod by rod</h3>
-            <p>Predictions are checked against real depth measurements before they ever ship to your phone.</p>
+            <h3>Grounded in real on-the-water testing</h3>
+            <p>We test relentlessly — rod by rod, line type by line type — and predictions are checked against measured depth before they ship.</p>
           </div>
           <div class="claim-card">
             <span class="claim-kicker accent-magenta">The Promise</span>
@@ -131,7 +139,8 @@
             <p>GPS is used for speed, not spots. Your locations are never stored, never sent, never seen.</p>
           </div>
         </div>
-        <p class="why-pitch reveal">Most trolling depth tools are either decade-old apps that no longer work or single-purpose calculators that stop at one number. Depth Vector is a modern, maintained, full trip system: pick your lure and line, set your speed, and get real line-out numbers for the depth you want — for every rod you're running.</p>
+        <p class="why-pitch reveal">No one can physically test every combination of lure, line, speed, and line out — there are hundreds of thousands of them, and conditions on the water never repeat exactly. So we built something smarter: we test relentlessly, and we let physics and AI intelligently model the rest. The result is the first modern trolling app — a maintained, full trip system for everyone from your first crankbait to a full spread. Pick your lure and line, set your speed, and get real line-out numbers for the depth you want.</p>
+        <p class="why-tagline reveal">Tested. Modeled. Honest about the difference.</p>
       </div>
     </section>
 
@@ -224,6 +233,7 @@
     <!-- ============ 5. LIVE TODAY VS COMING NEXT ============ -->
     <section class="roadmap section">
       <div class="section-bg section-bg-texture asset" data-asset="assets/bg-water-blue.jpg" data-bg data-label=""></div>
+      <div class="contour-layer" aria-hidden="true"></div>
       <div class="container">
         <h2 class="section-title reveal">We ship what we've verified</h2>
         <div class="roadmap-grid reveal">
@@ -269,6 +279,19 @@
       </div>
     </section>
 
+    <!-- ============ 6b. BUILT WITH YOU ============ -->
+    <section class="built-with-you section">
+      <div class="container narrow center">
+        <h2 class="section-title reveal">Built with you</h2>
+        <div class="wish-card reveal">
+          <div class="wish-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2.5l2.6 6.05 6.4.55-4.85 4.25 1.45 6.3L12 16.3l-5.6 3.35 1.45-6.3L3 9.1l6.4-.55L12 2.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <p>We take user input seriously. The app's <strong>Make a Wish</strong> feature lets you request features directly — and we're always looking for suggestions that make the trolling experience better and maximize your time on the water. Depth Vector is built with anglers, for everyone from beginner to expert.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ 7. WHO IT'S FOR ============ -->
     <section class="who section">
       <div class="container">
@@ -278,7 +301,7 @@
             <div class="who-photo asset" data-asset="assets/photo-who-1.jpg" data-bg data-label="Photo"></div>
             <div class="who-body">
               <h3>The weekend troller</h3>
-              <p>Wants fish, not math. Quick Depth gets lines to the right depth in seconds, so the cooler fills up while everyone else is still guessing.</p>
+              <p>Wants fish, not math. Quick Depth gets lines to the right depth in seconds — more of the day spent fishing, less of it guessing.</p>
             </div>
           </div>
           <div class="who-card panel">
@@ -304,9 +327,10 @@
       <div class="download-bg asset" data-asset="assets/photo-cta.jpg" data-bg data-label=""></div>
       <div class="container narrow center">
         <div class="download-logo asset reveal" data-asset="assets/logo-wordmark.png" data-alt="Depth Vector" data-label="Depth Vector"></div>
-        <p class="download-tagline reveal">Know exactly how deep you're running.</p>
+        <p class="download-tagline reveal">Know how deep you're running. Every rod. Every time.</p>
 
         <div class="store-row center reveal">
+          <div class="app-icon-badge asset" data-asset="assets/favicon.png" data-alt="Depth Vector app icon" data-label=""></div>
           <div class="store-badge coming-soon" aria-label="App Store — coming soon">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702z"/></svg>
             <span><small>Coming Soon to the</small><strong>App Store</strong></span>
@@ -326,7 +350,7 @@
           <input type="email" id="notify-email" name="email" placeholder="you@example.com" required autocomplete="email">
           <button type="submit" class="btn btn-primary">Get notified at launch</button>
         </form>
-        <p class="notify-thanks" id="notify-thanks" hidden>You're on the list. We'll email you the day it drops. 🎣</p>
+        <p class="notify-thanks" id="notify-thanks" hidden>You're on the list — we'll email you at launch.</p>
 
         <p class="contact-line reveal">Questions? <a href="mailto:hello@depth-vector.com"><strong>hello@depth-vector.com</strong></a></p>
       </div>
