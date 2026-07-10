@@ -177,14 +177,6 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
 }
 .header-logo > img { object-fit: contain; }
 
-/* the wordmark PNG has a solid black background — screen-blend it
-   into the dark page so it reads as transparent */
-.header-logo > img,
-.footer-logo > img,
-.download-logo > img {
-  mix-blend-mode: screen;
-}
-
 /* ---------- hero ---------- */
 .hero {
   position: relative;
@@ -518,6 +510,25 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
 .who-body p { color: var(--text-dim); font-size: 0.95rem; }
 
 /* ---------- download CTA ---------- */
+.download { overflow: hidden; }
+.download-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0.22;
+  border: none !important;
+  border-radius: 0 !important;
+}
+.download-bg:not(.asset-loaded) { background: none; }
+.download-bg:not(.asset-loaded)::after { content: none; }
+.download-bg.asset-loaded::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--bg) 0%, rgba(12,15,20,0.6) 35%, rgba(12,15,20,0.75) 100%);
+  z-index: 1;
+}
+.download > .container { position: relative; z-index: 2; }
 .download-logo {
   width: min(420px, 80vw);
   height: 54px;
