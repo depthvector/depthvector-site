@@ -4,7 +4,7 @@
 
 ## What it does
 
-- Quick Depth: enter a target depth and trolling speed, get the line out number for any lure and line combo in the catalog.
+- Find Depth Now: enter a target depth and trolling speed, get the line out number for any lure and line combo in the catalog.
 - Active Trip: a live dashboard showing every rod's target depth and line out, with live GPS speed. Change speed and every rod updates.
 - Rod Locker: save real rod, reel, and line setups once and reuse them every trip.
 - Spreads: save and redeploy full multi rod setups in seconds.
@@ -13,9 +13,9 @@
 
 ## Key facts
 
-- First release covers crankbait dive predictions for all major walleye cranks, leadcore, copper, downriggers, snap weights with rigging suggestions, trip logging and catch tracking.
+- First release covers crankbait dive predictions for all major walleye cranks, leadcore, copper, downriggers, snap weights with rigging suggestions, trip logging with trip reports (best window, top lure, best depth), and sonar matching (transducer depth offset so app numbers line up with your graph).
 - Catalog of 150+ walleye lures and 1,000+ fishing lines with real measured diameters.
-- Coming after launch: divers (Dipsy, Torpedo, and mini sizes, tested with Luhr-Jensen models first), boat transducer depth input, lure speed input for speed probes, custom depth offsets per saved rod and lure setup, and live running depth in Active Trip from phone GPS speed. User requests through the app's Make a Wish feature steer the roadmap.
+- Coming after launch: divers (Dipsy, Torpedo, and mini sizes, tested with Luhr-Jensen models first), lure speed input for speed probes, custom depth offsets per saved rod and lure setup, and live running depth in Active Trip from phone GPS speed. User requests through the app's Make a Wish feature steer the roadmap.
 - Depth predictions come from physics models refined with AI against controlled depth testing on the water, not from a static lookup table.
 - No app can predict running depth to 100% accuracy; current, water density, and line wear all move the number. Depth Vector aims to be as close as physics allows.
 - Privacy: GPS is used transiently for trolling speed only. Precise locations are never stored or transmitted.

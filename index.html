@@ -12,11 +12,15 @@
     assets/bullseye.svg             — roadmap "live" bullet marker                      [PRESENT]
     (brand source pack: assets/depth_vector_premium_assets_v3/ — dark versions only;
      transparent_png/ exports have edge artifacts, do not use)
-    assets/screenshot-home.png      — Home screen (hero phone)              [placeholder]
-    assets/screenshot-quickdepth.png — Quick Depth screen                    [placeholder]
-    assets/screenshot-activetrip.png — Active Trip dashboard                 [placeholder]
-    assets/screenshot-rodlocker.png — Rod Locker screen                      [placeholder]
-    assets/screenshot-spreads.png   — Spreads screen                         [placeholder]
+    assets/screenshot-home.jpg      — Home screen (hero phone)                          [PRESENT]
+    assets/screenshot-quickdepth.jpg — Find Depth Now with LET OUT result               [PRESENT]
+    assets/screenshot-activetrip.jpg — Active Trip dashboard, statuses + GPS on target  [PRESENT]
+    assets/screenshot-triplog.jpg   — Trip report: best window, top lure, best depth    [PRESENT]
+    assets/screenshot-rodlocker.jpg — Rod Locker screen                                 [PRESENT]
+    assets/screenshot-spreads.jpg   — Spreads with a selected program                   [PRESENT]
+    assets/screenshot-education.jpg — Control the Controllables (variables section)     [PRESENT]
+    assets/screenshot-guide.jpg     — How this app works guide (unused spare)           [PRESENT]
+    (all captured from the simulator demo dataset; recapture after big UI changes)
     assets/photo-hero.jpg           — hero background fishing photo          [PRESENT]
     assets/photo-cta.jpg            — download CTA background photo          [PRESENT]
     assets/bg-why.jpg               — "why" section background               [PRESENT]
@@ -165,13 +169,13 @@
     <div class="container header-inner">
       <a href="#top" class="header-logo asset" data-asset="assets/logo-wordmark.png" data-alt="Depth Vector" data-label="Depth Vector"></a>
       <nav class="header-nav" aria-label="Primary">
+        <a href="#how">How It Works</a>
         <a href="#features">Features</a>
-        <a href="#video">In Action</a>
         <a href="#roadmap">What's Live</a>
         <a href="#variables">Variables</a>
         <a href="#faq">FAQ</a>
       </nav>
-      <a href="#download" class="btn btn-primary btn-small">Get the App</a>
+      <a href="#download" class="btn btn-primary btn-small">Join the Launch List</a>
     </div>
   </header>
 
@@ -183,10 +187,15 @@
       <div class="contour-layer" aria-hidden="true"></div>
       <img class="depth-scale-accent" src="assets/depth_scale_10_60.svg" alt="" aria-hidden="true">
       <div class="container hero-inner">
-        <div class="hero-copy reveal">
+        <div class="hero-copy">
           <span class="pill">The First Modern Trolling App</span>
-          <h1>Know how deep you're running. Every rod. Every time.</h1>
-          <p class="subhead">Advanced physics models, refined with AI against real depth testing on the water. Real depth numbers for the way you actually troll, from your first crankbait to a full spread.</p>
+          <h1>Know how deep every lure is running.</h1>
+          <p class="subhead">Choose your lure, line, speed, and target depth. Depth Vector gives you the line out number, then keeps every rod in your spread organized as conditions change.</p>
+
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary">Join the Launch List</a>
+            <a href="#accuracy" class="btn btn-secondary">See how accuracy works</a>
+          </div>
 
           <div class="store-row">
             <div class="app-icon-badge asset" data-asset="assets/favicon.png" data-alt="Depth Vector app icon" data-label=""></div>
@@ -200,38 +209,47 @@
               <span><small>Coming Soon to</small><strong>Google Play</strong></span>
             </div>
           </div>
-          <div class="qr-row">
-            <div class="qr asset" data-asset="assets/qr-appstore.png" data-alt="QR code linking to Depth Vector on the App Store" data-label="QR"></div>
-            <div class="qr asset" data-asset="assets/qr-googleplay.png" data-alt="QR code linking to Depth Vector on Google Play" data-label="QR"></div>
-          </div>
         </div>
 
-        <div class="hero-phone reveal">
+        <div class="hero-phone">
           <div class="phone">
-            <div class="phone-screen asset" data-asset="assets/screenshot-home.png" data-alt="Depth Vector home screen showing live weather, barometric pressure, and quick actions" data-label="Home screen"></div>
+            <div class="phone-screen asset" data-asset="assets/screenshot-home.jpg" data-alt="Depth Vector home screen with a trip in progress, live weather for Baudette Minnesota, and Find Depth Now" data-label="Home screen"></div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- ============ 2. WHY DEPTH VECTOR ============ -->
-    <section class="why section">
+    <section class="why section" id="accuracy">
       <div class="section-bg asset" data-asset="assets/bg-why.jpg" data-bg data-label=""></div>
       <div class="container">
-        <h2 class="section-title reveal">A smarter trolling depth calculator</h2>
-        <div class="claim-grid reveal">
-          <div class="claim-card">
-            <span class="claim-kicker accent-blue">The Engine</span>
-            <h3>Advanced physics + AI modeling, not a lookup table</h3>
-            <p>Real dive physics for your exact lure, line, and speed, refined with AI against measured depths from our own testing.</p>
-          </div>
-          <div class="claim-card">
-            <span class="claim-kicker accent-cyan">The Proof</span>
-            <h3>Grounded in real testing on the water</h3>
-            <p>We test relentlessly, rod by rod and line type by line type. Predictions are checked against measured depth before they ship.</p>
-          </div>
+        <span class="section-eyebrow reveal">Accuracy you can understand</span>
+        <h2 class="section-title reveal">Measured first. Modeled second. Verified before release.</h2>
+        <div class="accuracy-flow reveal" aria-label="How Depth Vector builds accurate predictions">
+          <div class="accuracy-step"><span>01</span><h3>Measure</h3><p>We record real running depths on the water while controlling lure, line, speed, and line out.</p></div>
+          <div class="accuracy-arrow" aria-hidden="true">→</div>
+          <div class="accuracy-step"><span>02</span><h3>Model</h3><p>Physics extends those measurements across the combinations no one could test one by one.</p></div>
+          <div class="accuracy-arrow" aria-hidden="true">→</div>
+          <div class="accuracy-step"><span>03</span><h3>Refine</h3><p>AI helps tune the curves against measured results. It never replaces the evidence from the water.</p></div>
+          <div class="accuracy-arrow" aria-hidden="true">→</div>
+          <div class="accuracy-step"><span>04</span><h3>Verify</h3><p>Predictions are checked against depth tests on the water before they reach the catalog.</p></div>
         </div>
-        <p class="why-pitch reveal">No one can physically test every combination of lure, line, speed, and line out. There are hundreds of thousands of them, and conditions on the water never repeat exactly. So we built something smarter: we test relentlessly, and we use physics and the latest AI models to intelligently cover the rest. The result is the first modern trolling app, a maintained, full trip system for everyone from your first crankbait to a full spread. Pick your lure and line, set your speed, and get real line out numbers for the depth you want.</p>
+        <p class="why-pitch reveal">Conditions will always create some variation. Our goal is repeatable, useful accuracy: rig the same rod the same way, and get a number you can trust trip after trip.</p>
+      </div>
+    </section>
+
+    <section class="trip-flow section" id="how" aria-labelledby="trip-flow-title">
+      <div class="contour-layer" aria-hidden="true"></div>
+      <div class="container">
+        <span class="section-eyebrow reveal">How this app works</span>
+        <h2 class="section-title reveal" id="trip-flow-title">Trolling, translated into numbers</h2>
+        <div class="trip-steps reveal">
+          <div class="trip-step"><span>1</span><h3>Match your sonar</h3><p>Tell the app how deep your transducer sits, so its numbers and your graph agree.</p></div>
+          <div class="trip-step"><span>2</span><h3>Save your rigs</h3><p>Build each rod, reel, line, and lure once, from 1,000+ lines and 150+ walleye lures.</p></div>
+          <div class="trip-step"><span>3</span><h3>Set your targets</h3><p>Pick a depth, hold a speed, and get the let out number for every rod.</p></div>
+          <div class="trip-step"><span>4</span><h3>Adjust live</h3><p>Change speed and the whole spread updates. Statuses show which rod needs attention.</p></div>
+          <div class="trip-step"><span>5</span><h3>Log what worked</h3><p>Best window, top lure, best depth. Run the same program next trip.</p></div>
+        </div>
       </div>
     </section>
 
@@ -241,55 +259,55 @@
       <div class="container">
         <h2 class="section-title reveal">Built for the way you actually troll</h2>
 
-        <div class="feature-row reveal">
+        <div class="feature-row feature-hero reveal">
           <div class="feature-copy">
-            <span class="feature-kicker">Quick Depth</span>
-            <h3>Target depth in. Line out. Done.</h3>
-            <p>The keystone of the app: enter the depth you want and the speed you're pulling, and get your line out number instantly. Works for every lure and line combo in the catalog. No charts, no guessing, no worn out booklet in the glove box.</p>
+            <span class="feature-kicker">01 · Find Depth Now</span>
+            <h3>Four inputs. One number. Lines in the water.</h3>
+            <p>Pick your line and lure, let GPS read your speed, set a target depth, and the LET OUT number updates instantly. It accounts for your line diameter, leader, rigging, and even your transducer depth. And when a lure can't reach the zone, it tells you what will: a half ounce snap here, an ounce there.</p>
+            <p class="feature-proof">Shown here: a Flicker Shad #7 on 15 lb braid at 2.4 mph, headed for 11 feet. Let out 107.3 and you're there.</p>
           </div>
           <div class="feature-shot">
-            <div class="phone">
-              <div class="phone-screen asset" data-asset="assets/screenshot-quickdepth.png" data-alt="Depth Vector Quick Depth screen showing the line out number for a target depth and trolling speed" data-label="Quick Depth"></div>
+            <div class="phone phone-lg">
+              <div class="phone-screen asset" data-asset="assets/screenshot-quickdepth.jpg" data-alt="Depth Vector Find Depth screen with line, lure, GPS speed, and target depth set, showing a let out of 107.3 feet" data-label="Find Depth Now"></div>
             </div>
           </div>
         </div>
 
-        <div class="feature-row flip reveal">
+        <div class="feature-row feature-hero flip reveal">
           <div class="feature-copy">
-            <span class="feature-kicker">Active Trip</span>
-            <h3>Run your whole spread, live.</h3>
-            <p>Every rod's target depth and line out on one dashboard, with live GPS speed off your phone. Bump your trolling speed and change every rod at once. The whole spread stays dialed.</p>
+            <span class="feature-kicker">02 · Active Trip</span>
+            <h3>Run the whole spread, live.</h3>
+            <p>Every rod's target and line out on one dashboard, with your real GPS speed averaged and checked against target. Green means ready. If a rig can't reach its depth, the rod flags itself and tells you the fix. Bump your speed and every rod updates at once, and fish counts ride along on each rod.</p>
+            <p class="feature-proof">Shown here: six rods on a reef program, eight fish in the boat, speed on target at 2.4.</p>
           </div>
           <div class="feature-shot">
-            <div class="phone">
-              <div class="phone-screen asset" data-asset="assets/screenshot-activetrip.png" data-alt="Depth Vector Active Trip dashboard showing target depth and line out for every rod with live GPS speed" data-label="Active Trip"></div>
+            <div class="phone phone-lg">
+              <div class="phone-screen asset" data-asset="assets/screenshot-activetrip.jpg" data-alt="Depth Vector Active Trip dashboard with rod statuses, fish counts, and live GPS speed reading on target" data-label="Active Trip"></div>
             </div>
           </div>
         </div>
 
-        <div class="feature-row reveal">
-          <div class="feature-copy">
-            <span class="feature-kicker">Rod Locker</span>
-            <h3>Your real rigs, saved once.</h3>
-            <p>Save each setup the way it actually sits in your boat: rod, reel, line. Reuse it every trip. Backed by a catalog of 150+ walleye lures and 1,000+ lines with real diameters.</p>
-          </div>
-          <div class="feature-shot">
-            <div class="phone">
-              <div class="phone-screen asset" data-asset="assets/screenshot-rodlocker.png" data-alt="Depth Vector Rod Locker screen listing saved rod, reel, and line setups" data-label="Rod Locker"></div>
+        <div class="feature-trio reveal">
+          <div class="trio-card panel">
+            <div class="phone phone-sm">
+              <div class="phone-screen asset" data-asset="assets/screenshot-triplog.jpg" data-alt="Depth Vector trip report showing total fish, best window, top producing lure, and best depth" data-label="Trip Log"></div>
             </div>
+            <h3>Trip Log</h3>
+            <p>Every trip becomes a report: best window, top producing lure, best depth, and fish by rod. Next trip starts where this one ended.</p>
           </div>
-        </div>
-
-        <div class="feature-row flip reveal">
-          <div class="feature-copy">
-            <span class="feature-kicker">Spreads</span>
-            <h3>Save what works. Run it again.</h3>
-            <p>Build multi rod setups, save the ones that catch fish, and redeploy a full spread in seconds, exactly the way it worked last time.</p>
-          </div>
-          <div class="feature-shot">
-            <div class="phone">
-              <div class="phone-screen asset" data-asset="assets/screenshot-spreads.png" data-alt="Depth Vector Spreads screen showing a saved multi rod trolling setup" data-label="Spreads"></div>
+          <div class="trio-card panel">
+            <div class="phone phone-sm">
+              <div class="phone-screen asset" data-asset="assets/screenshot-rodlocker.jpg" data-alt="Depth Vector Rod Locker listing saved rods with line, lure, and leader details" data-label="Rod Locker"></div>
             </div>
+            <h3>Rod Locker</h3>
+            <p>Save each rig the way it actually sits in your boat: rod, reel, line, leader. Find depth for any of them in one tap.</p>
+          </div>
+          <div class="trio-card panel">
+            <div class="phone phone-sm">
+              <div class="phone-screen asset" data-asset="assets/screenshot-spreads.jpg" data-alt="Depth Vector Spreads screen with a saved six rod program and a start trip button" data-label="Spreads"></div>
+            </div>
+            <h3>Spreads</h3>
+            <p>Build a program once, star the one that produces, and start the whole trip from it in a single tap.</p>
           </div>
         </div>
 
@@ -338,10 +356,11 @@
               <li>Snap weights &amp; rigging suggestions. Can't reach 35 ft on mono? Here's what will.</li>
               <li>Full line database: mono, braid, leadcore, real diameters</li>
               <li>Live GPS speed</li>
-              <li>Quick Depth</li>
+              <li>Find Depth Now</li>
               <li>Rod Locker</li>
               <li>Spreads</li>
-              <li>Trip logging &amp; catch tracking</li>
+              <li>Trip logging &amp; catch tracking, with trip reports: best window, top lure, best depth</li>
+              <li>Sonar matching: set your transducer depth so app numbers line up with your graph</li>
               <li>Offline mode</li>
             </ul>
           </div>
@@ -349,7 +368,6 @@
             <h3><span class="dot dot-blue"></span>Coming next</h3>
             <ul class="list-coming">
               <li>Divers: Dipsy, Torpedo, and mini sizes, tested with Luhr-Jensen models first</li>
-              <li>Boat transducer depth input, so app numbers line up with your graph</li>
               <li>Lure speed input for anglers running a speed probe</li>
               <li>Custom depth offsets for every saved rod and lure setup</li>
               <li>Live running depth in Active Trip from phone GPS speed</li>
@@ -365,8 +383,14 @@
       <div class="section-bg asset" data-asset="assets/bg-talk.jpg" data-bg data-label=""></div>
       <div class="container">
         <h2 class="section-title reveal">Trolling variables: what actually moves your depth</h2>
-        <div class="prose narrow-prose reveal">
-          <p>Running depth is a physics problem with a lot of inputs. Our approach is to measure on the water while controlling as many of these variables as we can, then use physics and the latest AI models to cover the combinations no one could ever test by hand. Our measurements aren't perfect either. There will always be slight variation, and our numbers will keep improving as we test. What we can give you today is the most accurate representation we know how to build.</p>
+        <div class="var-intro reveal">
+          <div class="prose">
+            <p>Running depth is a physics problem with a lot of inputs. Our approach is to measure on the water while controlling as many of these variables as we can, then use physics and the latest AI models to cover the combinations no one could ever test by hand. Our measurements aren't perfect either. There will always be slight variation, and our numbers will keep improving as we test. What we can give you today is the most accurate representation we know how to build.</p>
+            <p>This thinking is built into the app itself. Control the Controllables lives right in Settings, so the why behind every number is one tap away.</p>
+          </div>
+          <div class="phone phone-sm">
+            <div class="phone-screen asset" data-asset="assets/screenshot-education.jpg" data-alt="Depth Vector Control the Controllables education screen listing line, lure, speed, let out, reel, rigging, and rod tip" data-label="Control the Controllables"></div>
+          </div>
         </div>
         <div class="var-grid reveal">
           <div class="var-card panel">
@@ -435,21 +459,21 @@
         <h2 class="section-title reveal">Who it's for</h2>
         <div class="who-grid reveal">
           <div class="who-card panel">
-            <div class="who-photo asset" data-asset="assets/photo-who-1.jpg" data-bg data-label="Photo"></div>
+            <div class="who-photo asset" data-asset="assets/photo-who-1.jpg" data-bg data-label="Photo" role="img" aria-label="Angler lifting a walleye into the boat"></div>
             <div class="who-body">
               <h3>The weekend troller</h3>
-              <p>Wants fish, not math. Quick Depth gets lines to the right depth in seconds. More of the day spent fishing, less of it guessing.</p>
+              <p>Wants fish, not math. Find Depth Now gets lines to the right depth in seconds. More of the day spent fishing, less of it guessing.</p>
             </div>
           </div>
           <div class="who-card panel">
-            <div class="who-photo asset" data-asset="assets/photo-who-2.jpg" data-bg data-label="Photo"></div>
+            <div class="who-photo asset" data-asset="assets/photo-who-2.jpg" data-bg data-label="Photo" role="img" aria-label="Boat helm with sonar and chartplotter screens"></div>
             <div class="who-body">
               <h3>The serious walleye hand</h3>
               <p>Runs multi rod spreads and wants every rod dialed and repeatable. Spreads and the Active Trip dashboard keep the whole program tight.</p>
             </div>
           </div>
           <div class="who-card panel">
-            <div class="who-photo asset" data-asset="assets/photo-who-3.jpg" data-bg data-label="Photo"></div>
+            <div class="who-photo asset" data-asset="assets/photo-who-3.jpg" data-bg data-label="Photo" role="img" aria-label="Young angler holding his first walleye"></div>
             <div class="who-body">
               <h3>The newcomer</h3>
               <p>Doesn't yet know a #5 crank on mono can't reach 35 feet. The app teaches while it works. You learn the water by fishing it.</p>
@@ -519,17 +543,11 @@
             <span><small>Coming Soon to</small><strong>Google Play</strong></span>
           </div>
         </div>
-        <div class="qr-row center reveal">
-          <div class="qr asset" data-asset="assets/qr-appstore.png" data-alt="QR code linking to Depth Vector on the App Store" data-label="QR"></div>
-          <div class="qr asset" data-asset="assets/qr-googleplay.png" data-alt="QR code linking to Depth Vector on Google Play" data-label="QR"></div>
+        <div class="launch-cta reveal">
+          <h2>Be first on the water with Depth Vector.</h2>
+          <p>The store listings are coming soon. Send us a quick email and we'll let you know when the app is ready.</p>
+          <a class="btn btn-primary" href="mailto:hello@depth-vector.com?subject=Depth%20Vector%20launch%20list">Join the Launch List</a>
         </div>
-
-        <form class="notify-form reveal" id="notify-form" novalidate>
-          <label class="visually-hidden" for="notify-email">Email address</label>
-          <input type="email" id="notify-email" name="email" placeholder="you@example.com" required autocomplete="email">
-          <button type="submit" class="btn btn-primary">Get notified at launch</button>
-        </form>
-        <p class="notify-thanks" id="notify-thanks" hidden>You're on the list. We'll email you at launch.</p>
 
         <p class="contact-line reveal">Questions? <a href="mailto:hello@depth-vector.com"><strong>hello@depth-vector.com</strong></a></p>
         <p class="cta-thanks reveal">Thanks for stopping by. Whether you fish with Depth Vector or not, we appreciate your time, and we hope your next trip is your best one.</p>

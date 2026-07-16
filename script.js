@@ -54,26 +54,3 @@ const observer = new IntersectionObserver(
   { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
 );
 document.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
-
-/* ------------------------------------------------------------
-   4. "Get notified" form
-   TODO: wire to a real endpoint (Cloudflare Worker or a form
-   service). Replace the body of the submit handler with a
-   fetch() POST to your endpoint, then show the thank-you state
-   on success. For now it only shows the thank-you state.
-   ------------------------------------------------------------ */
-const form = document.getElementById("notify-form");
-const thanks = document.getElementById("notify-thanks");
-if (form) {
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const email = form.email.value.trim();
-    if (!email || !form.email.checkValidity()) {
-      form.email.focus();
-      return;
-    }
-    // TODO: fetch("https://YOUR-FORM-ENDPOINT", { method: "POST", body: ... })
-    form.hidden = true;
-    thanks.hidden = false;
-  });
-}
