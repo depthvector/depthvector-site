@@ -1,31 +1,6 @@
-# Depth Vector — all crawlers welcome, including AI crawlers.
-# Being findable by AI assistants is intentional.
+# PLACEHOLDER MODE: block all indexing during Apple Developer verification.
+# At launch: restore the crawler friendly robots.txt, sitemap.xml, and llms.txt
+# from launch.html + the SEO plan.
 
 User-agent: *
-Allow: /
-
-User-agent: GPTBot
-Allow: /
-
-User-agent: OAI-SearchBot
-Allow: /
-
-User-agent: ChatGPT-User
-Allow: /
-
-User-agent: ClaudeBot
-Allow: /
-
-User-agent: Claude-Web
-Allow: /
-
-User-agent: PerplexityBot
-Allow: /
-
-User-agent: Google-Extended
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-Sitemap: https://depth-vector.com/sitemap.xml
+Disallow: /

@@ -486,6 +486,13 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
 .trip-flow {
   background: radial-gradient(ellipse 80% 80% at 50% 50%, rgba(0, 102, 255, 0.09), transparent 72%), var(--bg);
 }
+.section-lede {
+  max-width: 720px;
+  margin: calc(-1 * clamp(20px, 3vw, 34px)) auto clamp(34px, 5vw, 52px);
+  text-align: center;
+  color: var(--text-dim);
+  font-size: clamp(1rem, 2vw, 1.14rem);
+}
 .trip-steps {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -496,6 +503,48 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
 }
 .trip-step { padding: 26px 22px 28px; }
 .trip-step + .trip-step { border-left: 1px solid var(--border); }
+.trip-step { position: relative; }
+.trip-step::after {
+  content: "";
+  position: absolute;
+  top: 42px;
+  left: 56px;
+  right: -18px;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(47,227,188,0.45), rgba(46,134,255,0.15));
+}
+.trip-step:last-child::after { display: none; }
+.journey-bands {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 18px;
+}
+.journey-bands > div {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 20px;
+  border: 1px solid rgba(46, 134, 255, 0.2);
+  border-radius: 14px;
+  background: rgba(7, 22, 38, 0.72);
+}
+.journey-bands > div::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--cyan), var(--accent));
+}
+.journey-bands small {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--cyan);
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.journey-bands strong { display: block; color: var(--text); font-size: 0.9rem; line-height: 1.45; }
 
 /* ---------- features ---------- */
 .feature-row {
@@ -903,6 +952,8 @@ h1, h2, h3 { font-weight: 800; line-height: 1.15; letter-spacing: -0.02em; }
   .accuracy-arrow { display: none; }
   .trip-steps { grid-template-columns: 1fr; }
   .trip-step + .trip-step { border-left: 0; border-top: 1px solid var(--border); }
+  .trip-step::after { display: none; }
+  .journey-bands { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {

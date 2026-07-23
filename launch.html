@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<!--
+  ============================================================
+  DEPTH VECTOR — MARKETING SITE · LAUNCH CHECKLIST
+  ============================================================
+  ASSETS (drop files at these paths; placeholders auto-swap):
+    assets/logo-wordmark.png        — H3 dark badge logo, 640w (header/footer/CTA)      [PRESENT]
+    assets/favicon.png              — A6 app icon 128px (favicon + on-page icon)        [PRESENT]
+    assets/app-icon.png             — A6 app icon 512px (OG image + apple-touch-icon)   [PRESENT]
+    assets/contour-texture.svg      — vector contour texture (hero/roadmap)               [PRESENT]
+    assets/depth_scale_10_60.svg    — depth-scale vertical hero accent                  [PRESENT]
+    assets/bullseye.svg             — roadmap "live" bullet marker                      [PRESENT]
+    (brand source pack: assets/depth_vector_premium_assets_v3/ — dark versions only;
+     transparent_png/ exports have edge artifacts, do not use)
+    assets/screenshot-home.png         — Home screen (hero phone)                       [PRESENT]
+    assets/screenshot-quickdepth.png   — Find Depth Now                                 [PRESENT]
+    assets/screenshot-activetrip.png   — Active Trip dashboard                          [PRESENT]
+    assets/screenshot-trip-report.png  — Trip report                                    [PRESENT]
+    assets/screenshot-rodlocker.png    — Rod Locker                                     [PRESENT]
+    assets/screenshot-spreads.png      — Spreads                                        [PRESENT]
+    assets/screenshot-controllables.png — Control the Controllables education           [PRESENT]
+    (all captured from the simulator demo dataset; recapture after big UI changes)
+    assets/photo-hero.jpg           — hero background fishing photo          [PRESENT]
+    assets/photo-cta.jpg            — download CTA background photo          [PRESENT]
+    assets/bg-why.jpg               — "why" section background               [PRESENT]
+    assets/bg-water-gray.jpg        — features section water texture         [PRESENT]
+    assets/bg-video.jpg             — video section background               [PRESENT]
+    assets/bg-water-blue.jpg        — roadmap section water texture          [PRESENT]
+    assets/bg-talk.jpg              — straight-talk section background       [PRESENT]
+    assets/photo-who-1.jpg          — "weekend troller" card photo           [PRESENT]
+    assets/photo-who-2.jpg          — "serious walleye hand" card photo      [PRESENT]
+    assets/photo-who-3.jpg          — "newcomer" card photo                  [PRESENT]
+    (source pool in assets/Photos/ — GPS/EXIF stripped; strip any new photos
+     before committing: iPhone photos carry location data)
+    assets/qr-appstore.png          — App Store QR (generate AFTER listing exists)
+    assets/qr-googleplay.png        — Google Play QR (generate AFTER listing exists)
+
+  TODOs BEFORE/AT LAUNCH:
+    [ ] VIDEO: replace VIDEO_ID_HERE in script.js with the real YouTube video ID
+    [ ] STORE LINKS: when listings go live, add real hrefs to the store badges
+        (search for "store-badge" below) and remove the "Coming Soon" state
+    [ ] FORM: wire the "Get notified" form to a real endpoint
+        (see the comment in script.js — Cloudflare Worker or form service)
+    [ ] PRIVACY/TERMS: replace privacy.html and terms.html placeholder copy
+        with the real documents (required for App Store / Play anyway)
+    [x] OG IMAGE: real 1200x630 banner at assets/og-image.png (badge on contour navy)
+    [ ] YOUTUBE: footer YouTube link points at the channel — set real channel URL;
+        when the walkthrough video is live, also add VideoObject JSON-LD
+    [ ] DAY OF LAUNCH: verify domain in Google Search Console + Bing Webmaster Tools,
+        submit sitemap.xml to both; enable Cloudflare Web Analytics (cookieless)
+    NOTE: FAQ section text and FAQPage JSON-LD in <head> must stay word-for-word in sync
+  ============================================================
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Depth Vector: Trolling Depth Calculator App for Walleye Anglers</title>
+  <meta name="description" content="A trolling depth calculator app for walleye anglers. Physics models refined with AI turn your lure, line, and speed into real line out numbers for every rod.">
+  <link rel="canonical" href="https://depth-vector.com/">
+
+  <!-- OpenGraph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://depth-vector.com/">
+  <meta property="og:title" content="Depth Vector: Trolling Depth Calculator App for Walleye Anglers">
+  <meta property="og:description" content="Advanced physics models, refined with AI against real depth testing on the water. Real depth numbers for the way you actually troll.">
+  <meta property="og:image" content="https://depth-vector.com/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Depth Vector: Trolling Depth Calculator App for Walleye Anglers">
+  <meta name="twitter:description" content="Physics models refined with AI turn your lure, line, and speed into real line out numbers for every rod.">
+  <meta name="twitter:image" content="https://depth-vector.com/assets/og-image.png">
+
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/app-icon.png">
+
+  <!-- Structured data for search engines and AI assistants.
+       NOTE: FAQPage answers below must stay word-for-word in sync with the on-page FAQ section. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://depth-vector.com/#website",
+        "url": "https://depth-vector.com/",
+        "name": "Depth Vector",
+        "publisher": { "@id": "https://depth-vector.com/#organization" }
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://depth-vector.com/#organization",
+        "name": "Depth Vector",
+        "url": "https://depth-vector.com/",
+        "logo": "https://depth-vector.com/assets/og-image.png",
+        "email": "hello@depth-vector.com"
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://depth-vector.com/#app",
+        "name": "Depth Vector",
+        "description": "A trolling depth calculator app for walleye anglers. Physics models refined with AI turn your lure, line, and speed into real line out numbers for every rod.",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "SportsApplication",
+        "publisher": { "@id": "https://depth-vector.com/#organization" },
+        "url": "https://depth-vector.com/"
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://depth-vector.com/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "How deep does my crankbait run?",
+            "acceptedAnswer": { "@type": "Answer", "text": "It depends on the lure's bill and body, your line diameter, your trolling speed, and how much line you have out. The same crankbait can run several feet apart on different setups. Depth Vector models your exact combination and gives you a line out number for the depth you want." }
+          },
+          {
+            "@type": "Question",
+            "name": "Can AI really predict dive curves?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Not on its own, and we don't ask it to. Depth Vector starts with physics: how a lure's bill, your line, and your speed interact in the water. We then use the latest AI models to refine those curves against depths we measured ourselves, and to extend them across hundreds of thousands of combinations no one could ever test by hand. Measurement keeps it grounded; AI fills the gaps." }
+          },
+          {
+            "@type": "Question",
+            "name": "Why can't I just make bottom contact and go from there?",
+            "acceptedAnswer": { "@type": "Answer", "text": "You can, and it works. Ticking bottom is a proven way to know exactly where your lure is. It only answers one question though: where the bottom is. When fish are suspended at 22 feet over 40, bottom contact can't take you to them, and dragging rock piles gets expensive. Depth Vector gives you the same confidence anywhere in the water column." }
+          },
+          {
+            "@type": "Question",
+            "name": "People have trolled without an app since the beginning of time. Why now?",
+            "acceptedAnswer": { "@type": "Answer", "text": "They have, and plenty of fish hit the net that way. The app doesn't replace experience; it shortens the search. Instead of spending the first hour of a trip finding the zone, you start in it, and you can put a second and third rod on the same depth with confidence. Anglers happily spend hundreds on tackle for a chance at better odds. Knowing your depth costs about as much as two crankbaits a year." }
+          },
+          {
+            "@type": "Question",
+            "name": "How much leadcore line do I let out for 30 feet?",
+            "acceptedAnswer": { "@type": "Answer", "text": "The old rule of thumb is that each color of leadcore adds roughly five feet of depth, so 30 feet would be about six colors. Real depth shifts with your speed, lure, and leader, so the rule is only a starting point. Depth Vector calculates colors out for your actual setup instead of an average." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does trolling speed change lure depth?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes, and by more than most anglers expect. Speed changes the balance between a lure's dive force and the drag on your line, so the same rig runs at different depths at 1.8 and 2.5 mph. Weighted lines like leadcore ride noticeably higher as speed climbs. Depth Vector takes speed as an input, so your number updates when your speed does." }
+          },
+          {
+            "@type": "Question",
+            "name": "How accurate is Depth Vector?",
+            "acceptedAnswer": { "@type": "Answer", "text": "As close as controlled measurement and physics can get, and we're upfront that nobody, including us, can promise perfection. Our numbers come from testing on the water while controlling every variable we can, and modeling the rest. Conditions will always add some variation. Keep your setup consistent and the numbers repeat, and repeatable is what puts fish in the boat." }
+          },
+          {
+            "@type": "Question",
+            "name": "What's the best app for trolling depth?",
+            "acceptedAnswer": { "@type": "Answer", "text": "A good trolling depth app should be actively maintained, cover the ways you actually troll, and stand on real testing. Depth Vector was built for exactly that: advanced physics models refined with the latest AI against measured depths on the water, covering everything from a single crankbait to a full spread. We'd rather prove it on your boat than claim it here." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#top" class="header-logo asset" data-asset="assets/logo-wordmark.png" data-alt="Depth Vector" data-label="Depth Vector"></a>
+      <nav class="header-nav" aria-label="Primary">
+        <a href="#how">How It Works</a>
+        <a href="#features">Features</a>
+        <a href="#roadmap">What's Live</a>
+        <a href="#variables">Variables</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#download" class="btn btn-primary btn-small">Join the Launch List</a>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ============ 1. HERO ============ -->
+    <section class="hero">
+      <div class="hero-bg asset" data-asset="assets/photo-hero.jpg" data-bg data-label=""></div>
+      <div class="contour-layer" aria-hidden="true"></div>
+      <img class="depth-scale-accent" src="assets/depth_scale_10_60.svg" alt="" aria-hidden="true">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <span class="pill">The First Modern Trolling App</span>
+          <h1>Know how deep every lure is running.</h1>
+          <p class="subhead">Choose your lure, line, speed, and target depth. Depth Vector gives you the line out number, then keeps every rod in your spread organized as conditions change.</p>
+
+          <div class="hero-actions">
+            <a href="#download" class="btn btn-primary">Join the Launch List</a>
+            <a href="#accuracy" class="btn btn-secondary">See how accuracy works</a>
+          </div>
+
+          <div class="store-row">
+            <div class="app-icon-badge asset" data-asset="assets/favicon.png" data-alt="Depth Vector app icon" data-label=""></div>
+            <!-- TODO: when store listings go live, wrap badges in real <a href> and remove .coming-soon -->
+            <div class="store-badge coming-soon" aria-label="App Store, coming soon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702z"/></svg>
+              <span><small>Coming Soon to the</small><strong>App Store</strong></span>
+            </div>
+            <div class="store-badge coming-soon" aria-label="Google Play, coming soon">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5V3.5c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35m13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27m3.35-4.31c.34.27.59.69.59 1.19s-.25.92-.59 1.19l-2.27 1.31-2.5-2.5 2.5-2.5 2.27 1.31M6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+              <span><small>Coming Soon to</small><strong>Google Play</strong></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-phone">
+          <div class="phone">
+            <div class="phone-screen asset" data-asset="assets/screenshot-home.png" data-alt="Depth Vector home screen with a trip in progress, weather for Baudette Minnesota, and Find Depth Now" data-label="Home screen"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 2. WHY DEPTH VECTOR ============ -->
+    <section class="why section" id="accuracy">
+      <div class="section-bg asset" data-asset="assets/bg-why.jpg" data-bg data-label=""></div>
+      <div class="container">
+        <span class="section-eyebrow reveal">Accuracy you can understand</span>
+        <h2 class="section-title reveal">Measured first. Modeled second. Verified before release.</h2>
+        <div class="accuracy-flow reveal" aria-label="How Depth Vector builds accurate predictions">
+          <div class="accuracy-step"><span>01</span><h3>Measure</h3><p>We record real running depths on the water while controlling lure, line, speed, and line out.</p></div>
+          <div class="accuracy-arrow" aria-hidden="true">→</div>
+          <div class="accuracy-step"><span>02</span><h3>Model</h3><p>Physics extends those measurements across the combinations no one could test one by one.</p></div>
+          <div class="accuracy-arrow" aria-hidden="true">→</div>
+          <div class="accuracy-step"><span>03</span><h3>Refine</h3><p>AI helps tune the curves against measured results. It never replaces the evidence from the water.</p></div>
+          <div class="accuracy-arrow" aria-hidden="true">→</div>
+          <div class="accuracy-step"><span>04</span><h3>Verify</h3><p>Predictions are checked against depth tests on the water before they reach the catalog.</p></div>
+        </div>
+        <p class="why-pitch reveal">Conditions will always create some variation. Our goal is repeatable, useful accuracy: rig the same rod the same way, and get a number you can trust trip after trip.</p>
+      </div>
+    </section>
+
+    <section class="trip-flow section" id="how" aria-labelledby="trip-flow-title">
+      <div class="contour-layer" aria-hidden="true"></div>
+      <div class="container">
+        <span class="section-eyebrow reveal">How this app works</span>
+        <h2 class="section-title reveal" id="trip-flow-title">Trolling, translated into numbers</h2>
+        <p class="section-lede reveal">Depth Vector connects the work you do before launch, the decisions you make while trolling, and the lessons you carry into the next trip.</p>
+        <div class="trip-steps reveal">
+          <div class="trip-step"><span>1</span><h3>Match your sonar</h3><p>Tell the app how deep your transducer sits, so its numbers and your graph agree.</p></div>
+          <div class="trip-step"><span>2</span><h3>Save your rigs</h3><p>Build each rod, reel, line, and lure once, from 1,000+ lines and 150+ walleye lures.</p></div>
+          <div class="trip-step"><span>3</span><h3>Set your targets</h3><p>Pick a depth, hold a speed, and get the let out number for every rod.</p></div>
+          <div class="trip-step"><span>4</span><h3>Adjust live</h3><p>Change speed and the whole spread updates. Statuses show which rod needs attention.</p></div>
+          <div class="trip-step"><span>5</span><h3>Log what worked</h3><p>Best window, top lure, best depth. Run the same program next trip.</p></div>
+        </div>
+        <div class="journey-bands reveal" aria-label="Depth Vector trip workflow">
+          <div><small>Before the trip</small><strong>Boat setup · Rod Locker · Spreads</strong></div>
+          <div><small>On the water</small><strong>Find Depth · Active Trip · Live adjustments</strong></div>
+          <div><small>After the trip</small><strong>Trip reports · Patterns · Repeatable programs</strong></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 3. KEY FEATURES ============ -->
+    <section class="features section" id="features">
+      <div class="section-bg section-bg-texture asset" data-asset="assets/bg-water-gray.jpg" data-bg data-label=""></div>
+      <div class="container">
+        <h2 class="section-title reveal">Built for the way you actually troll</h2>
+
+        <div class="feature-row feature-hero reveal">
+          <div class="feature-copy">
+            <span class="feature-kicker">01 · Find Depth Now</span>
+            <h3>Four inputs. One number. Lines in the water.</h3>
+            <p>Pick your exact line and lure, set the speed you will hold, and choose the depth you want to cover. The result stays pinned at the bottom while you refine leader, rigging, and sonar reference. If the combination cannot reach the zone, Depth Vector gives you a next move instead of inventing a number.</p>
+            <p class="feature-proof">Shown here: a saved SR7 rig loads its exact 10 lb Sufix 832 line, Rapala Shad Rap, and target depth in one tap.</p>
+          </div>
+          <div class="feature-shot">
+            <div class="phone phone-lg">
+              <div class="phone-screen asset" data-asset="assets/screenshot-quickdepth.png" data-alt="Depth Vector Find Depth screen with a saved line, lure, and target depth loaded" data-label="Find Depth Now"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-row feature-hero flip reveal">
+          <div class="feature-copy">
+            <span class="feature-kicker">02 · Active Trip</span>
+            <h3>Run the whole spread, live.</h3>
+            <p>Every rod's target and line out on one dashboard, with your real GPS speed averaged and checked against target. Green means ready. If a rig can't reach its depth, the rod flags itself and tells you the fix. Bump your speed and every rod updates at once, and fish counts ride along on each rod.</p>
+            <p class="feature-proof">Shown here: six rods on a Reef Edge Program, 15 fish logged, and average speed on target at 2.4 mph.</p>
+          </div>
+          <div class="feature-shot">
+            <div class="phone phone-lg">
+              <div class="phone-screen asset" data-asset="assets/screenshot-activetrip.png" data-alt="Depth Vector Active Trip dashboard with six rods, fish counts, and average speed on target" data-label="Active Trip"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="feature-trio reveal">
+          <div class="trio-card panel">
+            <div class="phone phone-sm">
+              <div class="phone-screen asset" data-asset="assets/screenshot-trip-report.png" data-alt="Depth Vector trip report showing 11 fish, best window, top producing lure, and best depth" data-label="Trip Log report"></div>
+            </div>
+            <h3>Trip Log</h3>
+            <p>Every trip becomes a report: best window, top producing lure, best depth, and fish by rod. Next trip starts where this one ended.</p>
+          </div>
+          <div class="trio-card panel">
+            <div class="phone phone-sm">
+              <div class="phone-screen asset" data-asset="assets/screenshot-rodlocker.png" data-alt="Depth Vector Rod Locker listing saved rigs with line, lure, leader, and Find Depth actions" data-label="Rod Locker"></div>
+            </div>
+            <h3>Rod Locker</h3>
+            <p>Save each rig the way it actually sits in your boat: rod, reel, line, leader. Find depth for any of them in one tap.</p>
+          </div>
+          <div class="trio-card panel">
+            <div class="phone phone-sm">
+              <div class="phone-screen asset" data-asset="assets/screenshot-spreads.png" data-alt="Depth Vector Spreads screen with three reusable trolling programs" data-label="Spreads"></div>
+            </div>
+            <h3>Spreads</h3>
+            <p>Build a program once, star the one that produces, and start the whole trip from it in a single tap.</p>
+          </div>
+        </div>
+
+        <div class="conditions-card reveal">
+          <div class="conditions-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M6.5 20a4.5 4.5 0 0 1-.36-8.99 6.5 6.5 0 0 1 12.72 1.05A4 4 0 0 1 18 20H6.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <h3>Live conditions, front and center</h3>
+            <p>Weather and barometric pressure on the home screen, centered on right now, so you know what the bite is working with before lines go in.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 4. SEE IT IN ACTION ============ -->
+    <section class="video section" id="video">
+      <div class="section-bg asset" data-asset="assets/bg-video.jpg" data-bg data-label=""></div>
+      <div class="container">
+        <h2 class="section-title reveal">See it in action</h2>
+        <!-- TODO: set VIDEO_ID in script.js (const VIDEO_ID). Placeholder renders until then. -->
+        <div class="video-frame reveal" id="video-frame">
+          <div class="video-placeholder">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg>
+            <p>App walkthrough video coming soon</p>
+          </div>
+        </div>
+        <p class="video-caption reveal">This doubles as the training video: a full walkthrough from launch to lines in the water.</p>
+      </div>
+    </section>
+
+    <!-- ============ 5. LIVE TODAY VS COMING NEXT ============ -->
+    <section class="roadmap section" id="roadmap">
+      <div class="section-bg section-bg-texture asset" data-asset="assets/bg-water-blue.jpg" data-bg data-label=""></div>
+      <div class="contour-layer" aria-hidden="true"></div>
+      <div class="container">
+        <h2 class="section-title reveal">We ship what we've verified</h2>
+        <div class="roadmap-grid reveal">
+          <div class="roadmap-col panel">
+            <h3><span class="dot dot-cyan"></span>Fully live &amp; tested</h3>
+            <ul class="list-live">
+              <li>Crankbait dive predictions for all major walleye cranks</li>
+              <li>Leadcore</li>
+              <li>Copper</li>
+              <li>Downriggers</li>
+              <li>Snap weights &amp; rigging suggestions. Can't reach 35 ft on mono? Here's what will.</li>
+              <li>Full line database: mono, braid, leadcore, real diameters</li>
+              <li>Live GPS speed</li>
+              <li>Find Depth Now</li>
+              <li>Rod Locker</li>
+              <li>Spreads</li>
+              <li>Trip logging &amp; catch tracking, with trip reports: best window, top lure, best depth</li>
+              <li>Sonar matching: set your transducer depth so app numbers line up with your graph</li>
+              <li>Offline mode</li>
+            </ul>
+          </div>
+          <div class="roadmap-col panel">
+            <h3><span class="dot dot-blue"></span>Coming next</h3>
+            <ul class="list-coming">
+              <li>Divers: Dipsy, Torpedo, and mini sizes, tested with Luhr-Jensen models first</li>
+              <li>Lure speed input for anglers running a speed probe</li>
+              <li>Custom depth offsets for every saved rod and lure setup</li>
+              <li>Live running depth in Active Trip from phone GPS speed</li>
+              <li>Whatever you wish for: Make a Wish requests steer this list</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6. TROLLING VARIABLES ============ -->
+    <section class="variables section" id="variables">
+      <div class="section-bg asset" data-asset="assets/bg-talk.jpg" data-bg data-label=""></div>
+      <div class="container">
+        <h2 class="section-title reveal">Trolling variables: what actually moves your depth</h2>
+        <div class="var-intro reveal">
+          <div class="prose">
+            <p>Running depth is a physics problem with a lot of inputs. Our approach is to measure on the water while controlling as many of these variables as we can, then use physics and the latest AI models to cover the combinations no one could ever test by hand. Our measurements aren't perfect either. There will always be slight variation, and our numbers will keep improving as we test. What we can give you today is the most accurate representation we know how to build.</p>
+            <p>This thinking is built into the app itself. Control the Controllables lives right in Settings, so the why behind every number is one tap away.</p>
+          </div>
+          <div class="phone phone-sm">
+            <div class="phone-screen asset" data-asset="assets/screenshot-controllables.png" data-alt="Depth Vector Control the Controllables education screen explaining line, lure, speed, let out, and reel setup" data-label="Control the Controllables"></div>
+          </div>
+        </div>
+        <div class="var-grid reveal">
+          <div class="var-card panel">
+            <h3>Speed</h3>
+            <p>The biggest lever you control. Speed changes the balance between a lure's dive force and the drag on your line, so the same rig runs at different depths at 1.8 and 2.5 mph.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Line diameter</h3>
+            <p>Thicker line drags more water and keeps a diving lure shallower on the same length of line. Moving from standard mono to thin braid can add several feet with no other change.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Line counter accuracy</h3>
+            <p>Counters measure spool revolutions, not feet. Two reels with the same counter reading can have different amounts of line in the water if their spools are filled differently.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Spool fill</h3>
+            <p>A full spool pays out more line per revolution than a half spool. Fill your reels the same way every time and your counter numbers become repeatable.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Mono stretch</h3>
+            <p>Mono stretches under the pull of a working lure, so the line between you and the lure is longer and shaped differently than the counter suggests. Braid barely stretches at all.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Transducer depth</h3>
+            <p>Your graph measures from the transducer, which sits below the waterline. Fish marked at 20 feet are deeper than 20 feet from the surface, where your lure numbers start.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Underwater current</h3>
+            <p>GPS speed is boat speed over ground. Water moving beneath you means your lure's speed through the water is different, so the same pass can run deeper one direction than the other.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Water density</h3>
+            <p>Yes, it's real. Cold water is denser and noticeably thicker than warm water, which changes the drag on your line and lure. A spring program and an August program aren't identical.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Lure tuning</h3>
+            <p>Two identical crankbaits off the shelf can run differently. A lure that isn't tracking true wanders shallow. Tune it to run straight and it runs to its number.</p>
+          </div>
+          <div class="var-card panel">
+            <h3>Rod position</h3>
+            <p>A rod tip held high pulls line up and out of the water; a tip near the surface puts more of it to work. Consistent rod placement keeps your numbers consistent.</p>
+          </div>
+        </div>
+        <div class="prose narrow-prose reveal">
+          <p class="var-outro">The thought is simple: control your controllables first, and you'll be much more accurate. Fill your spools the same, rig your rods the same, hold your speed steady, and the variables you can't control get a lot smaller. Two rods rigged identically should run identically. That kind of repeatability is what puts lures in the zone and keeps them there.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 6b. BUILT WITH YOU ============ -->
+    <section class="built-with-you section">
+      <div class="container narrow center">
+        <h2 class="section-title reveal">Built with you</h2>
+        <div class="wish-card reveal">
+          <div class="wish-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2.5l2.6 6.05 6.4.55-4.85 4.25 1.45 6.3L12 16.3l-5.6 3.35 1.45-6.3L3 9.1l6.4-.55L12 2.5z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+          </div>
+          <p>We take user input seriously. The app's <strong>Make a Wish</strong> feature lets you request features directly. We're always looking for suggestions that make the trolling experience better and maximize your time on the water. Depth Vector is built with anglers, for everyone from beginner to expert.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7. WHO IT'S FOR ============ -->
+    <section class="who section">
+      <div class="container">
+        <h2 class="section-title reveal">Who it's for</h2>
+        <div class="who-grid reveal">
+          <div class="who-card panel">
+            <div class="who-photo asset" data-asset="assets/photo-who-1.jpg" data-bg data-label="Photo" role="img" aria-label="Angler lifting a walleye into the boat"></div>
+            <div class="who-body">
+              <h3>The weekend troller</h3>
+              <p>Wants fish, not math. Find Depth Now gets lines to the right depth in seconds. More of the day spent fishing, less of it guessing.</p>
+            </div>
+          </div>
+          <div class="who-card panel">
+            <div class="who-photo asset" data-asset="assets/photo-who-2.jpg" data-bg data-label="Photo" role="img" aria-label="Boat helm with sonar and chartplotter screens"></div>
+            <div class="who-body">
+              <h3>The serious walleye hand</h3>
+              <p>Runs multi rod spreads and wants every rod dialed and repeatable. Spreads and the Active Trip dashboard keep the whole program tight.</p>
+            </div>
+          </div>
+          <div class="who-card panel">
+            <div class="who-photo asset" data-asset="assets/photo-who-3.jpg" data-bg data-label="Photo" role="img" aria-label="Young angler holding his first walleye"></div>
+            <div class="who-body">
+              <h3>The newcomer</h3>
+              <p>Doesn't yet know a #5 crank on mono can't reach 35 feet. The app teaches while it works. You learn the water by fishing it.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 7b. FAQ ============ -->
+    <!-- NOTE: keep these answers word-for-word in sync with the FAQPage JSON-LD in <head> -->
+    <section class="faq section" id="faq">
+      <div class="container narrow">
+        <h2 class="section-title reveal">Trolling depth questions, answered</h2>
+        <div class="faq-list reveal">
+          <div class="faq-item panel">
+            <h3>How deep does my crankbait run?</h3>
+            <p>It depends on the lure's bill and body, your line diameter, your trolling speed, and how much line you have out. The same crankbait can run several feet apart on different setups. Depth Vector models your exact combination and gives you a line out number for the depth you want.</p>
+          </div>
+          <div class="faq-item panel">
+            <h3>Can AI really predict dive curves?</h3>
+            <p>Not on its own, and we don't ask it to. Depth Vector starts with physics: how a lure's bill, your line, and your speed interact in the water. We then use the latest AI models to refine those curves against depths we measured ourselves, and to extend them across hundreds of thousands of combinations no one could ever test by hand. Measurement keeps it grounded; AI fills the gaps.</p>
+          </div>
+          <div class="faq-item panel">
+            <h3>Why can't I just make bottom contact and go from there?</h3>
+            <p>You can, and it works. Ticking bottom is a proven way to know exactly where your lure is. It only answers one question though: where the bottom is. When fish are suspended at 22 feet over 40, bottom contact can't take you to them, and dragging rock piles gets expensive. Depth Vector gives you the same confidence anywhere in the water column.</p>
+          </div>
+          <div class="faq-item panel">
+            <h3>People have trolled without an app since the beginning of time. Why now?</h3>
+            <p>They have, and plenty of fish hit the net that way. The app doesn't replace experience; it shortens the search. Instead of spending the first hour of a trip finding the zone, you start in it, and you can put a second and third rod on the same depth with confidence. Anglers happily spend hundreds on tackle for a chance at better odds. Knowing your depth costs about as much as two crankbaits a year.</p>
+          </div>
+          <div class="faq-item panel">
+            <h3>How much leadcore line do I let out for 30 feet?</h3>
+            <p>The old rule of thumb is that each color of leadcore adds roughly five feet of depth, so 30 feet would be about six colors. Real depth shifts with your speed, lure, and leader, so the rule is only a starting point. Depth Vector calculates colors out for your actual setup instead of an average.</p>
+          </div>
+          <div class="faq-item panel">
+            <h3>Does trolling speed change lure depth?</h3>
+            <p>Yes, and by more than most anglers expect. Speed changes the balance between a lure's dive force and the drag on your line, so the same rig runs at different depths at 1.8 and 2.5 mph. Weighted lines like leadcore ride noticeably higher as speed climbs. Depth Vector takes speed as an input, so your number updates when your speed does.</p>
+          </div>
+          <div class="faq-item panel">
+            <h3>How accurate is Depth Vector?</h3>
+            <p>As close as controlled measurement and physics can get, and we're upfront that nobody, including us, can promise perfection. Our numbers come from testing on the water while controlling every variable we can, and modeling the rest. Conditions will always add some variation. Keep your setup consistent and the numbers repeat, and repeatable is what puts fish in the boat.</p>
+          </div>
+          <div class="faq-item panel">
+            <h3>What's the best app for trolling depth?</h3>
+            <p>A good trolling depth app should be actively maintained, cover the ways you actually troll, and stand on real testing. Depth Vector was built for exactly that: advanced physics models refined with the latest AI against measured depths on the water, covering everything from a single crankbait to a full spread. We'd rather prove it on your boat than claim it here.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ 8. FINAL DOWNLOAD CTA ============ -->
+    <section class="download section" id="download">
+      <div class="download-bg asset" data-asset="assets/photo-cta.jpg" data-bg data-label=""></div>
+      <div class="container narrow center">
+        <div class="download-logo asset reveal" data-asset="assets/logo-wordmark.png" data-alt="Depth Vector" data-label="Depth Vector"></div>
+        <p class="download-tagline reveal">Know how deep you're running. Every rod. Every time.</p>
+
+        <div class="store-row center reveal">
+          <div class="app-icon-badge asset" data-asset="assets/favicon.png" data-alt="Depth Vector app icon" data-label=""></div>
+          <div class="store-badge coming-soon" aria-label="App Store, coming soon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12.152 6.896c-.948 0-2.415-1.078-3.96-1.04-2.04.027-3.91 1.183-4.961 3.014-2.117 3.675-.546 9.103 1.519 12.09 1.013 1.454 2.208 3.09 3.792 3.039 1.52-.065 2.09-.987 3.935-.987 1.831 0 2.35.987 3.96.948 1.637-.026 2.676-1.48 3.676-2.948 1.156-1.688 1.636-3.325 1.662-3.415-.039-.013-3.182-1.221-3.22-4.857-.026-3.04 2.48-4.494 2.597-4.559-1.429-2.09-3.623-2.324-4.39-2.376-2-.156-3.675 1.09-4.61 1.09zM15.53 3.83c.843-1.012 1.4-2.427 1.245-3.83-1.207.052-2.662.805-3.532 1.818-.78.896-1.454 2.338-1.273 3.714 1.338.104 2.715-.688 3.56-1.702z"/></svg>
+            <span><small>Coming Soon to the</small><strong>App Store</strong></span>
+          </div>
+          <div class="store-badge coming-soon" aria-label="Google Play, coming soon">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20.5V3.5c0-.59.34-1.11.84-1.35L13.69 12l-9.85 9.85c-.5-.25-.84-.76-.84-1.35m13.81-5.38L6.05 21.34l8.49-8.49 2.27 2.27m3.35-4.31c.34.27.59.69.59 1.19s-.25.92-.59 1.19l-2.27 1.31-2.5-2.5 2.5-2.5 2.27 1.31M6.05 2.66l10.76 6.22-2.27 2.27-8.49-8.49z"/></svg>
+            <span><small>Coming Soon to</small><strong>Google Play</strong></span>
+          </div>
+        </div>
+        <div class="launch-cta reveal">
+          <h2>Be first on the water with Depth Vector.</h2>
+          <p>The store listings are coming soon. Send us a quick email and we'll let you know when the app is ready.</p>
+          <a class="btn btn-primary" href="mailto:hello@depth-vector.com?subject=Depth%20Vector%20launch%20list">Join the Launch List</a>
+        </div>
+
+        <p class="contact-line reveal">Questions? <a href="mailto:hello@depth-vector.com"><strong>hello@depth-vector.com</strong></a></p>
+        <p class="cta-thanks reveal">Thanks for stopping by. Whether you fish with Depth Vector or not, we appreciate your time, and we hope your next trip is your best one.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ 9. FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo asset" data-asset="assets/logo-wordmark.png" data-alt="Depth Vector" data-label="Depth Vector"></div>
+      </div>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="mailto:support@depth-vector.com">Support</a>
+        <a href="mailto:hello@depth-vector.com">Contact</a>
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms</a>
+        <!-- TODO: set the real YouTube channel URL -->
+        <a href="https://www.youtube.com/" rel="noopener" target="_blank">YouTube</a>
+      </nav>
+    </div>
+    <div class="container footer-copyright">
+      <p>GPS is used for speed, not spots. Your locations are never stored.</p>
+      <p>Depth Vector © 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

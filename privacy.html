@@ -1,27 +1,95 @@
 <!DOCTYPE html>
+<!--
+  PLACEHOLDER MODE. Content from Privacy-Policy-Draft.md (draft notes removed).
+  Lawyer review before App Store submission. At launch: restore the full site
+  from launch.html + the SEO plan.
+-->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Privacy Policy | Depth Vector</title>
-  <meta name="robots" content="noindex">
+  <meta name="robots" content="noindex, nofollow">
   <link rel="icon" type="image/png" href="assets/favicon.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0c0f14;
+      color: #eef2f7;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+      padding: 40px 20px 80px;
+    }
+    .wrap { max-width: 70ch; margin: 0 auto; }
+    .logo { display: block; width: min(260px, 70vw); margin: 0 0 40px; }
+    .logo img { width: 100%; height: auto; border-radius: 8px; }
+    h1 { font-size: 1.9rem; margin-bottom: 6px; }
+    h2 { font-size: 1.2rem; margin: 34px 0 10px; }
+    p, li { color: #c6cfda; margin-bottom: 12px; font-size: 0.98rem; }
+    ul { padding-left: 22px; margin-bottom: 12px; }
+    li { margin-bottom: 8px; }
+    strong { color: #eef2f7; }
+    em { color: #eef2f7; font-style: normal; font-weight: 600; }
+    .updated { color: #6b7686; font-size: 0.9rem; margin-bottom: 28px; }
+    a { color: #2E86FF; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+  </style>
 </head>
 <body>
-  <main class="section">
-    <div class="container narrow">
-      <h1 style="margin-bottom: 24px;">Privacy Policy</h1>
-      <div class="prose">
-        <p><em>Placeholder: the full privacy policy will be published here before launch.</em></p>
-        <p>The short version, which will not change: <strong>we never know where you fish.</strong> Precise GPS coordinates are never stored, never transmitted, and never tied to any record. GPS is used transiently on your device to calculate trolling speed and, when online, a coarse town level location for weather. It is then discarded.</p>
-        <p>Questions in the meantime: <a href="mailto:hello@depth-vector.com">hello@depth-vector.com</a></p>
-      </div>
-      <p style="margin-top: 40px;"><a href="index.html" style="color: var(--accent);">← Back to depth-vector.com</a></p>
-    </div>
-  </main>
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Depth Vector home"><img src="assets/logo-small.png" alt="Depth Vector"></a>
+
+    <h1>Privacy Policy</h1>
+    <p class="updated">Last updated: July 16, 2026</p>
+
+    <p><strong>Depth Vector</strong> ("we," "our," or "us") provides a mobile application and website that help anglers predict lure running depth while trolling. This policy explains what information we collect, how we use it, and the choices you have. It applies to the Depth Vector mobile app and depth-vector.com.</p>
+
+    <h2>The short version</h2>
+    <ul>
+      <li><strong>We never know where you fish.</strong> The app never stores or transmits your GPS coordinates.</li>
+      <li>Location is used on your device only, to calculate boat speed and fetch local weather. Coordinates are discarded immediately after those calculations.</li>
+      <li>You can use the app without creating an account.</li>
+      <li>We do not sell your data. We do not show ads.</li>
+    </ul>
+
+    <h2>Information we collect</h2>
+    <p><strong>Information you provide.</strong> If you create an account: an email address (or an Apple or Google sign in identifier). If you use the app's features: gear you add (rods, reels, lines, lures), saved spreads, settings, and any feature suggestions you submit (for example, through Make a Wish). Support emails you send us.</p>
+    <p><strong>Information collected automatically.</strong></p>
+    <ul>
+      <li><em>Location (on your device only):</em> with your permission, the app reads GPS to compute your current speed and to fetch weather for your area. <strong>Raw coordinates are processed on your device and immediately discarded. They are never stored on the device beyond the calculation, and never transmitted to our servers.</strong> What may be stored is derived data that cannot locate you, such as averaged speed values.</li>
+      <li><em>App diagnostics:</em> basic crash and error reports so we can fix problems.</li>
+      <li><em>Website:</em> our site host may log standard technical data (browser type, pages visited).</li>
+    </ul>
+    <p><strong>Information we do NOT collect:</strong> GPS coordinates, tracks, or waypoints; your fishing spots; contacts; photos; advertising identifiers.</p>
+
+    <h2>How we use information</h2>
+    <p>To provide the app's features (depth predictions, gear storage, sync across your devices if you create an account); to maintain, troubleshoot, and improve the app; to respond to support requests; and to consider feature suggestions. We do not use your information for advertising and we do not sell or rent it to anyone.</p>
+
+    <h2>Sync and storage</h2>
+    <p>If you create an account, your gear, spreads, and settings are stored on our backend (hosted on Supabase) so they sync across devices. Data is encrypted in transit and at rest, and access is restricted so only your account can read your data. Without an account, your data stays on your device.</p>
+
+    <h2>Third party services</h2>
+    <p>We use a small number of service providers to run Depth Vector: Supabase (backend hosting and authentication), Open-Meteo (weather data; weather requests use an approximate area, not your stored identity), Cloudflare (website and email routing), and Apple and Google (app distribution, sign in, and payments if applicable). Each receives only what is necessary to perform its function.</p>
+
+    <h2>Your choices and rights</h2>
+    <ul>
+      <li><strong>Location permission</strong> is optional; the app works with manually entered speed if you decline.</li>
+      <li>You may use the app without an account.</li>
+      <li>You can request deletion of your account and associated data at any time by contacting us. We will delete it within 30 days.</li>
+      <li>Depending on where you live (for example, EEA and UK GDPR, California CCPA), you may have rights to access, correct, delete, or export your data. Contact us and we'll honor applicable requests.</li>
+    </ul>
+
+    <h2>Children</h2>
+    <p>Depth Vector is not directed at children under 13, and we do not knowingly collect personal information from them. If you believe a child has provided us information, contact us and we will delete it.</p>
+
+    <h2>Data retention and security</h2>
+    <p>We retain account data while your account is active and delete it upon request. We use industry standard safeguards including encryption in transit (TLS), encryption at rest, and row level access controls. No system is perfectly secure, but we design so that the most sensitive thing, where you fish, is never in our systems at all.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>We may update this policy as the app evolves. We'll post changes here with an updated date, and note material changes in the app.</p>
+
+    <h2>Contact</h2>
+    <p>Questions or requests: <a href="mailto:support@depth-vector.com"><strong>support@depth-vector.com</strong></a></p>
+  </div>
 </body>
 </html>
